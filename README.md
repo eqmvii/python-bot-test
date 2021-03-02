@@ -1,3 +1,10 @@
+# Testing some stuff
+
+Playing around with a single player "bot", just for fun. All hacking and testing for now.
+
+
+===
+
 # Python install
 
 installed Python 3.9, updated system PATH to include C:\Users\myaccount\AppData\Local\Programs\Python\Python39\python.exe after installation
@@ -20,4 +27,16 @@ deactivate
 
 pip install pyautogui
 
+pip install Pillow
+
+^ for taking screenshots
+
+pip install opencv-python
+
 (TODO add to requirements.txt or something?)
+
+# Tesserect
+
+https://digi.bib.uni-mannheim.de/tesseract/
+
+tesseract-ocr-w64-setup-v4.1.0.20190314.exe
