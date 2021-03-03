@@ -27,10 +27,12 @@ def loot():
   pyautogui.keyDown('alt')
 
   # Jewels
+  # TODO this is grabbing boneweaves which is funny
   magic_jewel_hits = pyautogui.locateAllOnScreen("words/blue_jewel.png", confidence=WORD_CONFIDENCE, region=(566,218, 790, 590))
 
   for magic_jewel in magic_jewel_hits:
     print("Jewel!")
+    items_looted += 1
     pyautogui.moveTo(magic_jewel)
     time.sleep(0.2)
     pyautogui.click()
@@ -40,6 +42,7 @@ def loot():
 
   for rare_jewel in rare_jewel_hits:
     print("Rare jewel!")
+    items_looted += 1
     pyautogui.moveTo(rare_jewel)
     time.sleep(0.2)
     pyautogui.click()
@@ -50,6 +53,7 @@ def loot():
 
   for charm in charm_hits:
     print("Charm!")
+    items_looted += 1
     pyautogui.moveTo(charm)
     time.sleep(0.2)
     pyautogui.click()
@@ -107,6 +111,7 @@ def loot():
 
   # Runes
 
+  # TODO: increase confidence or check color? This is grabing rune bows, rune swords, etc.
   rune_hits = pyautogui.locateAllOnScreen("words/rune.png", confidence=WORD_CONFIDENCE, region=(566,218, 790, 590))
 
   for rune in rune_hits:

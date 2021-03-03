@@ -1,0 +1,29 @@
+OFF COLOR:
+
+cap N, I, U
+
+= = = upper = = =
+['G', 'P', 'H', 'M', 'K', 'W', 'D', 'R', 'S', 'B']
+
+A==
+C==
+E==
+F==
+I==
+J==
+L==
+N==
+O==
+T==
+U==
+V==
+X -> MISSING 
+Y -> GET A YEW
+Z==
+
+
+
+= = = lower = = =
+
+Q - won't have? Lacquered Plate -> grey or white or green?
+Z - won't have?
