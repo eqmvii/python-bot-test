@@ -1,123 +1,196 @@
 import pyautogui
 import time
 
-SLEEP_TIME = 0.3
-WALK_TIME = 2.5
+SLEEP_TIME = 0.25
+WALK_TIME = 1.2
+TELE_TIME = 0.25
+
+CENTER_X = 960
+CENTER_Y = 540
+
+WORD_CONFIDENCE = 0.8
 
 def go_n_wait(x, y):
   pyautogui.moveTo(x, y)
   pyautogui.click()
   time.sleep(WALK_TIME)
 
-# for i in range(1):
+def tele_n_wait(x, y, delay=TELE_TIME):
+  pyautogui.moveTo(x, y)
+  pyautogui.click(button='right')
+  time.sleep(delay)
 
-screenWidth, screenHeight = pyautogui.size() # Get the size of the primary monitor.
+def loot():
+  items_looted = 0
+  pyautogui.moveTo(CENTER_X, CENTER_Y)
+  pyautogui.keyUp('shift')
+  pyautogui.keyDown('alt')
 
-centerX = screenWidth / 2
-centerY = screenHeight / 2
+  # Jewels
+  magic_jewel_hits = pyautogui.locateAllOnScreen("words/blue_jewel.png", confidence=WORD_CONFIDENCE, region=(566,218, 790, 590))
 
-currentMouseX, currentMouseY = pyautogui.position() # Get the XY position of the mouse.
+  for magic_jewel in magic_jewel_hits:
+    print("Jewel!")
+    pyautogui.moveTo(magic_jewel)
+    time.sleep(0.2)
+    pyautogui.click()
+    time.sleep(1.5)
 
-# pyautogui.moveTo(100, 150) # Move the mouse to XY coordinates.
+  rare_jewel_hits = pyautogui.locateAllOnScreen("words/yellow_jewel.png", confidence=WORD_CONFIDENCE, region=(566,218, 790, 590))
 
-# pyautogui.screenshot('foo.png')
+  for rare_jewel in rare_jewel_hits:
+    print("Rare jewel!")
+    pyautogui.moveTo(rare_jewel)
+    time.sleep(0.2)
+    pyautogui.click()
+    time.sleep(1.5)
 
-sp = pyautogui.locateCenterOnScreen('single_player.png')
+  # Charms
+  charm_hits = pyautogui.locateAllOnScreen("words/charm.png", confidence=WORD_CONFIDENCE, region=(566,218, 790, 590))
 
-print(sp)
+  for charm in charm_hits:
+    print("Charm!")
+    pyautogui.moveTo(charm)
+    time.sleep(0.2)
+    pyautogui.click()
+    time.sleep(1.5)
 
-pyautogui.moveTo(sp)
+  # Set Items
+  vowels = ['A', 'E', 'I', 'O', 'U']
 
-pyautogui.click()
+  for c in vowels:
+    hit = pyautogui.locateCenterOnScreen("green_letters/" + c + '_lower_green.png', confidence=0.9, region=(566,218, 790, 590))
+    if str(hit) != "None":
+      print("Set Item!")
+      items_looted += 1
+      pyautogui.moveTo(hit)
+      time.sleep(0.2)
+      pyautogui.click()
+      time.sleep(2)
 
-time.sleep(SLEEP_TIME)
+  # Unique Items
 
-sf = pyautogui.locateCenterOnScreen('sorcyfindo.png')
+  # gold I and D suck, try more distinct letters
+  unique_letters = ['A', 'E', 'O', 'U', "R", "S", "D", "N", "G"]
 
-print(sf)
+  for c in unique_letters:
+    hits = pyautogui.locateAllOnScreen("gold_letters/" + c + '_lower_gold.png', confidence=0.9, region=(566,218, 790, 590))
+    for hit in hits:
+      # Unique color is 148, 128, 100
+      im = pyautogui.screenshot()
+      orig_x = int(hit[0])
+      orig_y = int(hit[1])
 
-pyautogui.moveTo(sf)
+      if c in ["R", "D"]:
+        spread = 3
+      else:
+        spread = 2
 
-pyautogui.click()
+      # TODO: Cross instead of square?
 
-pyautogui.click()
+      gold = 0
+      total = 0
+      for x in range(orig_x - spread, orig_x + spread):
+        for y in range(orig_y - spread, orig_y + spread):
+          total += 1
+          pix = im.getpixel((x - 1, y - 1))
+          if ((148, 128, 100) == pix):
+            gold +=1
+      # print("Gold Pixels: " + str(gold) + "out of " + str(total) + " pixels")
+      if gold > 0:
+        print("Unique!")
+        items_looted += 1
+        pyautogui.moveTo(hit)
+        time.sleep(0.2)
+        pyautogui.click()
+        time.sleep(1.5)
 
-hell_button = pyautogui.locateCenterOnScreen('hell.png')
+  # Runes
 
-pyautogui.moveTo(hell_button)
+  rune_hits = pyautogui.locateAllOnScreen("words/rune.png", confidence=WORD_CONFIDENCE, region=(566,218, 790, 590))
 
-pyautogui.click()
+  for rune in rune_hits:
+    print("Rune!")
+    items_looted += 1
+    pyautogui.moveTo(rune)
+    time.sleep(0.2)
+    pyautogui.click()
+    time.sleep(1.5)
 
-time.sleep(SLEEP_TIME)
+  pyautogui.keyUp('alt')
+  return items_looted
 
-time.sleep(WALK_TIME)
+def run_bot():
+  items_picked = 0
 
-# Walk to the portal
+  time.sleep(0.3)
 
-go_n_wait(792, 727)
+  sp = pyautogui.locateCenterOnScreen('single_player.png', region=(566,218, 790, 590))
+  pyautogui.moveTo(sp)
+  pyautogui.click()
+  time.sleep(SLEEP_TIME)
 
-go_n_wait(761, 661)
+  sf = pyautogui.locateCenterOnScreen('sorcyfindo.png', confidence=0.8, region=(566,218, 790, 590))
+  pyautogui.moveTo(sf)
+  pyautogui.click()
+  pyautogui.click()
 
-go_n_wait(784, 731)
+  hell_button = pyautogui.locateCenterOnScreen('hell.png', region=(566,218, 790, 590))
+  pyautogui.moveTo(hell_button)
+  pyautogui.click()
+  time.sleep(1)
 
-go_n_wait(798, 695)
+  # Walk to the portal
 
-go_n_wait(932, 735)
+  go_n_wait(792, 727)
+  go_n_wait(761, 661)
+  go_n_wait(784, 731)
+  go_n_wait(798, 695)
+  go_n_wait(932, 735)
+  go_n_wait(774, 623)
+  go_n_wait(839, 406)
+  go_n_wait(780, 470)
 
-go_n_wait(774, 623)
+  # Inside the portal
 
-go_n_wait(839, 406)
+  tele_n_wait(1225, 309)
+  tele_n_wait(1225, 309)
+  tele_n_wait(1225, 309)
+  tele_n_wait(1180, 430, delay=0)
 
-go_n_wait(780, 470)
+  # blast 'em
 
-# Old code
+  pyautogui.moveTo(1132, 420)
+  pyautogui.keyDown('shift')
 
-  # print("done sleeping now moving")
+  for i in range(9):
+    pyautogui.click()
+    pyautogui.moveRel(-5, 0)
+    time.sleep(0.5)
 
-  # pyautogui.moveRel(-200, 20)
+  # gimme da loot
 
-  # pyautogui.click()
+  items_picked += loot()
 
-  # time.sleep(0.8)
+  # quit the game
 
-  # pyautogui.click()
+  pyautogui.press('esc')
+  time.sleep(SLEEP_TIME)
+  pyautogui.moveTo(CENTER_X, (CENTER_Y - 40))
+  pyautogui.click()
+  time.sleep(SLEEP_TIME)
 
-  # time.sleep(0.8)
+  return items_picked
 
-  # pyautogui.click()
+def main():
+  print("Begin Runs 💰")
+  finds = 0
 
-  # time.sleep(0.8)
+  for i in range(1, 101):
+    finds += run_bot()
+    print("| Run  " + str(i) + ". Found " + str(finds))
 
-  # pyautogui.click()
+  print("Goodbye 🌊")
 
-  # pyautogui.press('esc')
-
-  # time.sleep(SLEEP_TIME)
-
-  # pyautogui.moveTo(centerX, (centerY - 40))
-
-  # pyautogui.click()
-
-  # time.sleep(SLEEP_TIME)
-
-
-# pyautogui.click()          # Click the mouse.
-# pyautogui.click(100, 200)  # Move the mouse to XY coordinates and click it.
-# pyautogui.click('button.png') # Find where button.png appears on the screen and click it.
-
-# pyautogui.move(0, 10)      # Move mouse 10 pixels down from its current position.
-# pyautogui.doubleClick()    # Double click the mouse.
-# pyautogui.moveTo(500, 500, duration=2, tween=pyautogui.easeInOutQuad)  # Use tweening/easing function to move mouse over 2 seconds.
-
-# pyautogui.write('Hello world!', interval=0.25)  # type with quarter-second pause in between each key
-# pyautogui.press('esc')     # Press the Esc key. All key names are in pyautogui.KEY_NAMES
-
-# pyautogui.keyDown('shift') # Press the Shift key down and hold it.
-# pyautogui.press(['left', 'left', 'left', 'left']) # Press the left arrow key 4 times.
-# pyautogui.keyUp('shift')   # Let go of the Shift key.
-
-# pyautogui.hotkey('ctrl', 'c') # Press the Ctrl-C hotkey combination.
-
-# pyautogui.alert('This is the message to display.') # Make an alert box appear and pause the program until OK is clicked.
-
-print("END OF SCRIPT")
+if __name__ == "__main__":
+  main()
