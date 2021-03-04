@@ -59,7 +59,7 @@ def loot():
     pyautogui.click()
     time.sleep(1.5)
 
-  # Set Items
+  # Set Item (only grabs one \o/)
   vowels = ['A', 'E', 'I', 'O', 'U']
 
   for c in vowels:
@@ -71,17 +71,18 @@ def loot():
       time.sleep(0.2)
       pyautogui.click()
       time.sleep(2)
+      break
 
-  # Unique Items
+  # Unique Item (only grabs one)
 
   # gold I and D suck, try more distinct letters
   unique_letters = ['A', 'E', 'O', 'U', "R", "S", "D", "N", "G"]
+  im = pyautogui.screenshot("run_screens/" + str(time.time()) + '_run_shot.png')
 
   for c in unique_letters:
     hits = pyautogui.locateAllOnScreen("gold_letters/" + c + '_lower_gold.png', confidence=0.9, region=(566,218, 790, 590))
     for hit in hits:
       # Unique color is 148, 128, 100
-      im = pyautogui.screenshot()
       orig_x = int(hit[0])
       orig_y = int(hit[1])
 
@@ -108,6 +109,7 @@ def loot():
         time.sleep(0.2)
         pyautogui.click()
         time.sleep(1.5)
+        break
 
   # Runes
 

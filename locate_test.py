@@ -8,11 +8,15 @@ def print_results(sorted_letters):
   for line in range(sorted_letters[-1]['line_number']):
     # TODO ERIC ugh how to pipe where is my elixir
     line_letters = list(filter(lambda x: x['line_number'] == line, sorted_letters))
-    # Start with a space, we have no capital letters yet
-    spaced_letters = [" "]
 
     end_of_last_letter_x = line_letters[0]['x'] + line_letters[0]['width']
+    last_color = line_letters[0]['color']
+    spaced_letters = ["(" + last_color + ") "]
+
     for letter in line_letters:
+      if letter['color'] != last_color:
+        spaced_letters.append("\n(" + letter['color'] + ") ")
+        last_color = letter['color']
       x_diff = letter['x'] - end_of_last_letter_x
       # TODO add more spaces if it's really big
       if x_diff > 7:
@@ -21,6 +25,38 @@ def print_results(sorted_letters):
       spaced_letters.append(letter["letter"])
 
     print("".join(spaced_letters))
+
+def get_color(im, x, y, width, height):
+  gold_pixels = 0
+  green_pixels = 0
+  red_pixels = 0
+  yellow_pixels = 0
+  blue_pixels = 0
+  for i in range(width):
+    for j in range(height):
+      pix = im.getpixel((int(x) + i, int(y) + j))
+      if pix == (148, 128, 100):
+        gold_pixels += 1
+        if gold_pixels >= 2:
+          return "gold"
+      elif pix == (12, 196, 28):
+        green_pixels += 1
+        if green_pixels >= 2:
+          return "green"
+      elif pix == (208, 132, 32):
+        red_pixels += 1
+        if red_pixels >= 2:
+          return "red"
+      elif pix == (216, 184, 100):
+        yellow_pixels +=1
+        if yellow_pixels >= 2:
+          return "yellow"
+      elif pix == (80, 80, 172):
+        blue_pixels +=1
+        if blue_pixels >= 2:
+          return "blue"
+  return "other"
+
 
 
 # im = pyautogui.screenshot()
@@ -32,10 +68,14 @@ def print_results(sorted_letters):
 # sample_path = "samples/random_new_sample.png"
 # sample_path = "samples/inventory_dump.png"
 # sample_path = "samples/3_charms.png"
-sample_path = "samples/real_1.png"
+# sample_path = "samples/real_1.png"
+# sample_path = "run_screens/1614816938.44777_run_shot.png"
+# sample_path = "run_screens/1614816964.662444_run_shot.png"
+sample_path = "run_screens/1614817675.8922539_run_shot.png"
 
 
 im = Image.open(sample_path)
+im = im.convert('RGB')
 start = time.time()
 
 all_letters = list(string.ascii_uppercase)
@@ -45,11 +85,15 @@ all_letters = list(string.ascii_uppercase)
 # Lower: Q, Z
 results = []
 
+# TODO add this for the real thing for performance
+# , region=(300, 0, 500, 300)
+# , region=(300, 0, 500, 300)
+
 for key in all_letters:
-  for o_hit in pyautogui.locateAll("keys/" + key + "_lower_key.png", im, region=(300, 0, 500, 300), confidence=0.95, grayscale=True):
-    results.append({'x': o_hit.left, 'y': o_hit.top, 'letter': key, 'width': o_hit.width})
-  for o_hit in pyautogui.locateAll("keys/" + key + "_upper_key.png", im, region=(380, 0, 500, 300), confidence=0.95, grayscale=True):
-    results.append({'x': o_hit.left, 'y': o_hit.top, 'letter': key, 'width': o_hit.width})
+  for hit in pyautogui.locateAll("keys/" + key + "_lower_key.png", im, confidence=0.96, grayscale=True):
+    results.append({'x': hit.left, 'y': hit.top, 'letter': key, 'width': hit.width, 'color': get_color(im, hit.left, hit.top, hit.width, hit.height)})
+  for hit in pyautogui.locateAll("keys/" + key + "_upper_key.png", im, confidence=0.96, grayscale=True):
+    results.append({'x': hit.left, 'y': hit.top, 'letter': key, 'width': hit.width, 'color': get_color(im, hit.left, hit.top, hit.width, hit.height)})
 
 # Lines are 16 pixels tall
 
@@ -84,16 +128,15 @@ multisorted = sorted(results, key = lambda x: (x['line_number'], x['x']))
 
 print("Picture Hunting + line bucketing took " + str(time.time() - start) + " seconds.")
 
-# for letter in multisorted:
-#   print(letter['letter'] + "(" + str(letter['x']) + ", " + str(letter['y']) + ") - Line " + str(letter['line_number']))
+for letter in multisorted:
+  print(letter['letter'] + "(" + str(letter['x']) + ", " + str(letter['y']) + ") - Line " + str(letter['line_number']) + " color: " + letter['color'])
 
-
+# TODO: Add Levenshtein Distance
 
 print("Found " + str(len(multisorted)) + " letters\n\n")
 
 print_results(multisorted)
 print("\nBye now!\n")
 print("Total run time: " + str(time.time() - start) + " seconds.")
-
-
+print(im.mode)
 
