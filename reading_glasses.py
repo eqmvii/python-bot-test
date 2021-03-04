@@ -4,7 +4,7 @@ import string
 import PIL
 from PIL import Image
 
-def print_results(sorted_letters):
+def build_results(sorted_letters):
   for line in range(sorted_letters[-1]['line_number']):
     # TODO ERIC ugh how to pipe where is my elixir
     line_letters = list(filter(lambda x: x['line_number'] == line, sorted_letters))
@@ -109,8 +109,6 @@ def teach_me_how_to_read(im):
   # line_sorted = sorted(results, key=lambda letter: letter['line_number'])
   multisorted = sorted(results, key = lambda x: (x['line_number'], x['x']))
 
-  print("Picture Hunting + line bucketing took " + str(time.time() - start) + " seconds.")
-
   # for letter in multisorted:
   #   print(letter['letter'] + "(" + str(letter['x']) + ", " + str(letter['y']) + ") - Line " + str(letter['line_number']) + " color: " + letter['color'])
 
@@ -118,7 +116,5 @@ def teach_me_how_to_read(im):
 
   print("Found " + str(len(multisorted)) + " letters\n\n")
 
-  print_results(multisorted)
-  print("\nBye now!\n")
-  print("Total run time: " + str(time.time() - start) + " seconds.")
+  return build_results(multisorted)
 

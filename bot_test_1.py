@@ -9,7 +9,7 @@ TELE_TIME = 0.25
 CENTER_X = 960
 CENTER_Y = 540
 
-WORD_CONFIDENCE = 0.8
+WORD_CONFIDENCE = 0.85
 
 # TODO const region tuple?
 
@@ -31,7 +31,7 @@ def loot():
 
   time.sleep(0.5)
   # TODO: return list of item objects that contains rough locations, quality, and name guess
-  reading_glasses.teach_me_how_to_read(pyautogui.screenshot(region=(566,218, 790, 590)))
+  # reading_glasses.teach_me_how_to_read(pyautogui.screenshot(region=(566,218, 790, 590)))
 
   # Jewels
   # TODO this is grabbing boneweaves which is funny
@@ -173,6 +173,14 @@ def run_bot():
   go_n_wait(780, 470)
 
   # Inside the portal
+
+  # tstorm
+  pyautogui.press('f5')
+  time.sleep(0.1)
+  pyautogui.click(button='right')
+  time.sleep(0.1)
+  pyautogui.press('f2')
+  time.sleep(0.1)
 
   tele_n_wait(1225, 309)
   tele_n_wait(1225, 309)
