@@ -71,7 +71,9 @@ def get_color(im, x, y, width, height):
 # sample_path = "samples/real_1.png"
 # sample_path = "run_screens/1614816938.44777_run_shot.png"
 # sample_path = "run_screens/1614816964.662444_run_shot.png"
-sample_path = "run_screens/1614817675.8922539_run_shot.png"
+# sample_path = "run_screens/1614817675.8922539_run_shot.png"
+
+sample_path = "run_screens/set_1614826686.6638985_run_shot.png"
 
 
 im = Image.open(sample_path)
@@ -128,13 +130,14 @@ multisorted = sorted(results, key = lambda x: (x['line_number'], x['x']))
 
 print("Picture Hunting + line bucketing took " + str(time.time() - start) + " seconds.")
 
-for letter in multisorted:
-  print(letter['letter'] + "(" + str(letter['x']) + ", " + str(letter['y']) + ") - Line " + str(letter['line_number']) + " color: " + letter['color'])
+# for letter in multisorted:
+#   print(letter['letter'] + "(" + str(letter['x']) + ", " + str(letter['y']) + ") - Line " + str(letter['line_number']) + " color: " + letter['color'])
 
 # TODO: Add Levenshtein Distance
 
 print("Found " + str(len(multisorted)) + " letters\n\n")
 
+print(sample_path + "\n")
 print_results(multisorted)
 print("\nBye now!\n")
 print("Total run time: " + str(time.time() - start) + " seconds.")

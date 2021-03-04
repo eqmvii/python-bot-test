@@ -9,7 +9,10 @@ finds = [
   "Lance",
   "Axe",
   "Ward Bow",
-  "Russet Armor"
+  "Russet Armor",
+  "Kite Shield",
+  # Hmmm. Spaces are the real enemy.
+  "Armet"
 ]
 
 tc_87 = [
