@@ -31,7 +31,7 @@ def loot():
 
   time.sleep(0.5)
   # TODO: return list of item objects that contains rough locations, quality, and name guess
-  # reading_glasses.teach_me_how_to_read(pyautogui.screenshot(region=(566,218, 790, 590)))
+  reading_glasses.teach_me_how_to_read(pyautogui.screenshot(region=(566,218, 790, 590)))
 
   # Jewels
   # TODO this is grabbing boneweaves which is funny

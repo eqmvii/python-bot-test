@@ -5,7 +5,7 @@ import PIL
 from PIL import Image
 
 def print_results(sorted_letters):
-  for line in range(sorted_letters[-1]['line_number']):
+  for line in range(sorted_letters[-1]['line_number'] + 1):
     # TODO ERIC ugh how to pipe where is my elixir
     line_letters = list(filter(lambda x: x['line_number'] == line, sorted_letters))
 
