@@ -33,6 +33,8 @@ pip install Pillow
 
 pip install opencv-python
 
+pip install python-Levenshtein
+
 (TODO add to requirements.txt or something?)
 
 # Tesserect
