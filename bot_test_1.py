@@ -39,7 +39,7 @@ def loot():
 
   for magic_jewel in magic_jewel_hits:
     print("Jewel!")
-    pyautogui.screenshot("run_screens/jewel_magic_" + str(time.time()) + '_run_shot.png', region=(566,218, 790, 590))
+    # pyautogui.screenshot("run_screens/jewel_magic_" + str(time.time()) + '_run_shot.png', region=(566,218, 790, 590))
     items_looted += 1
     pyautogui.moveTo(magic_jewel)
     time.sleep(0.2)
@@ -62,7 +62,7 @@ def loot():
 
   for charm in charm_hits:
     print("Charm!")
-    pyautogui.screenshot("run_screens/charm_" + str(time.time()) + '_run_shot.png', region=(566,218, 790, 590))
+    # pyautogui.screenshot("run_screens/charm_" + str(time.time()) + '_run_shot.png', region=(566,218, 790, 590))
     items_looted += 1
     pyautogui.moveTo(charm)
     time.sleep(0.2)
@@ -74,8 +74,11 @@ def loot():
   # gold I and D suck, try more distinct letters
   unique_letters = ['A', 'E', 'O', 'U', "R", "S", "D", "N", "G"]
   im = pyautogui.screenshot()
+  stop_searching = False
 
   for c in unique_letters:
+    if stop_searching:
+      break
     hits = pyautogui.locateAllOnScreen("gold_letters/" + c + '_lower_gold.png', confidence=0.9, region=(566,218, 790, 590))
     for hit in hits:
       # Unique color is 148, 128, 100
@@ -100,12 +103,13 @@ def loot():
       # print("Gold Pixels: " + str(gold) + "out of " + str(total) + " pixels")
       if gold > 0:
         print("Unique!")
-        pyautogui.screenshot("run_screens/unique_" + str(time.time()) + '_run_shot.png', region=(566,218, 790, 590))
+        # pyautogui.screenshot("run_screens/unique_" + str(time.time()) + '_run_shot.png', region=(566,218, 790, 590))
         items_looted += 1
         pyautogui.moveTo(hit)
         time.sleep(0.2)
         pyautogui.click()
         time.sleep(1.5)
+        stop_searching = True
         break
 
     # Set Item (only grabs one \o/)
@@ -115,7 +119,7 @@ def loot():
     hit = pyautogui.locateCenterOnScreen("green_letters/" + c + '_lower_green.png', confidence=0.9, region=(566,218, 790, 590))
     if str(hit) != "None":
       print("Set Item!")
-      pyautogui.screenshot("run_screens/set_" + str(time.time()) + '_run_shot.png', region=(566,218, 790, 590))
+      # pyautogui.screenshot("run_screens/set_" + str(time.time()) + '_run_shot.png', region=(566,218, 790, 590))
       items_looted += 1
       pyautogui.moveTo(hit)
       time.sleep(0.2)
@@ -131,7 +135,7 @@ def loot():
 
   for rune in rune_hits:
     print("Rune!")
-    pyautogui.screenshot("run_screens/rune_" + str(time.time()) + '_run_shot.png', region=(566,218, 790, 590))
+    # pyautogui.screenshot("run_screens/rune_" + str(time.time()) + '_run_shot.png', region=(566,218, 790, 590))
     items_looted += 1
     pyautogui.moveTo(rune)
     time.sleep(0.2)
@@ -192,12 +196,13 @@ def run_bot():
   pyautogui.moveTo(1132, 420)
   pyautogui.keyDown('shift')
 
-  for i in range(9):
+  for i in range(11):
     pyautogui.click()
-    pyautogui.moveRel(-5, 0)
-    time.sleep(0.5)
+    pyautogui.moveRel(-4, 0)
+    time.sleep(0.4)
 
   # gimme da loot
+  time.sleep(1)
 
   items_picked += loot()
 

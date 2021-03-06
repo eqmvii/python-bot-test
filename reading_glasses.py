@@ -1,30 +1,39 @@
+# Libraries
+
 import pyautogui
 import time
 import string
 import PIL
 from PIL import Image
 
-def build_results(sorted_letters):
-  for line in range(sorted_letters[-1]['line_number'] + 1):
-    # TODO ERIC ugh how to pipe where is my elixir
-    line_letters = list(filter(lambda x: x['line_number'] == line, sorted_letters))
+# Project modules
+from GroundItem import GroundItem
 
-    end_of_last_letter_x = line_letters[0]['x'] + line_letters[0]['width']
-    last_color = line_letters[0]['color']
-    spaced_letters = ["(" + last_color + ") "]
+def print_results(item_list):
+  for item in items:
+    print(item.name())
 
-    for letter in line_letters:
-      if letter['color'] != last_color:
-        spaced_letters.append("\n(" + letter['color'] + ") ")
-        last_color = letter['color']
-      x_diff = letter['x'] - end_of_last_letter_x
-      # TODO add more spaces if it's really big
-      if x_diff > 7:
-        spaced_letters.append(" ")
-      end_of_last_letter_x = (letter['x'] + letter['width'])
-      spaced_letters.append(letter["letter"])
+def build_results(line_sorted_letters):
+  if not line_sorted_letters:
+    return []
 
-    print("".join(spaced_letters))
+  items = []
+
+  for letter in line_sorted_letters:
+    if not items:
+      items.append(GroundItem(letter))
+    else:
+      # Different color or different line means new item
+      if items[-1].color != letter["color"] or items[-1].line_number != letter["line_number"]:
+        items.append(GroundItem(letter))
+      else:
+        ll = items[-1].last_letter()
+        if (letter["x"] - (items[-1].last_letter()["x"] + ll["width"])) > 7:
+          # TODO: clone the letter?
+          items[-1].add_letter({'capital': ll["capital"], 'x': ll["x"] + ll["width"], 'y': ll["y"], 'line_number': ll["line_number"], 'letter': " ", 'width': 1, 'color': ll["color"]})
+        items[-1].add_letter(letter)
+
+  return items
 
 def get_color(im, x, y, width, height):
   gold_pixels = 0
@@ -57,16 +66,28 @@ def get_color(im, x, y, width, height):
           return "blue"
   return "other"
 
+def bucket(raw_results):
+  if not raw_results:
+    return []
+  y_sorted = sorted(raw_results, key=lambda letter: letter['y'])
+
+  current_line_number = 0
+  current_row_y = y_sorted[0]['y']
+  for letter in y_sorted:
+    if letter['y'] - current_row_y <= 11:
+      letter['line_number'] = current_line_number
+    else:
+      current_line_number += 1
+      current_row_y = letter['y']
+      letter['line_number'] = current_line_number
+
+  return sorted(y_sorted, key = lambda x: (x['line_number'], x['x']))
+
 def teach_me_how_to_read(im):
   im = im.convert('RGB')
   start = time.time()
 
   all_letters = list(string.ascii_uppercase)
-
-  # Missing letters are giant yellow squares:
-  # Upper: X
-  # Lower: Q, Z
-  results = []
 
   # TODO add this for the real thing for performance
   # , region=(300, 0, 500, 300)
@@ -78,43 +99,10 @@ def teach_me_how_to_read(im):
     for hit in pyautogui.locateAll("keys/" + key + "_upper_key.png", im, confidence=0.96, grayscale=True):
       results.append({'capital': True, 'x': hit.left, 'y': hit.top, 'letter': key, 'width': hit.width, 'color': get_color(im, hit.left, hit.top, hit.width, hit.height)})
 
-  # Lines are 16 pixels tall
+  sorted_results = bucket(results)
 
-  # Add ~5 pixels to our smallest lower case and go from there
+  fully_baked_output = build_results(sorted_results)
+  print_results(fully_baked_output)
 
-  # TODO ERIC -- line sort
-  # 1. find lowest y
-  # 2. Add all Ys that are within 6 pixels
-  # 3. Repeat until everything is in a line
-
-  print("Picture Hunting took " + str(time.time() - start) + " seconds.")
-
-  # sorted_y = sorted(results, key=lambda letter: letter['y'])
-
-  # multisorted = sorted(results, key = lambda x: (x['y'], x['x']))
-
-  print("Bucket Time")
-  y_sorted = sorted(results, key=lambda letter: letter['y'])
-
-  current_line_number = 0
-  current_row_y = y_sorted[0]['y']
-  for letter in y_sorted:
-    if letter['y'] - current_row_y <= 7:
-      letter['line_number'] = current_line_number
-    else:
-      current_line_number += 1
-      current_row_y = letter['y']
-      letter['line_number'] = current_line_number
-
-  # line_sorted = sorted(results, key=lambda letter: letter['line_number'])
-  multisorted = sorted(results, key = lambda x: (x['line_number'], x['x']))
-
-  # for letter in multisorted:
-  #   print(letter['letter'] + "(" + str(letter['x']) + ", " + str(letter['y']) + ") - Line " + str(letter['line_number']) + " color: " + letter['color'])
-
-  # TODO: Add Levenshtein Distance
-
-  print("Found " + str(len(multisorted)) + " letters\n\n")
-
-  return build_results(multisorted)
+  return fully_baked_output
 
