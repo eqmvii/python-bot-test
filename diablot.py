@@ -180,7 +180,7 @@ def main():
   print("Begin Runs 💰")
   finds = 0
 
-  for i in range(1, 61):
+  for i in range(1, 501):
     run_start = time.time()
     finds += run_bot()
     print("\n| Run  " + str(i) + ". Found " + str(finds) + " in " + str(round((time.time() - run_start), 2)) + "|\n")

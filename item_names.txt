@@ -1083,5 +1083,6 @@ Scroll of Town Portal
 Scroll of Identify
 Stamina Potion
 Antidote Potion
+Thawing Potion
 
 

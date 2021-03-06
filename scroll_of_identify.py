@@ -70,8 +70,8 @@ def find_item(raw_found_item_string, items_filename="item_names.txt"):
       logger.log("No results for " + raw_found_item_string + ", as: " + item_regex.lstrip(), "item_id")
     else:
       # TODO: Somehow save these, so possible IDs for things like charms and jewels can get picked
-      logger.log("Multiple results for " + raw_found_item_string + ", as: " + item_regex.lstrip(), "item_id")
-      logger.log("[" + "| ".join("".join(search_result).split("\n")) + " ]", "item_id")
+      logger.log(str(len(search_result)) + " results for " + raw_found_item_string + ". Used '" + item_regex.lstrip() + "' as RegEx.", "item_id")
+      # logger.log("[" + "| ".join("".join(search_result).split("\n")) + " ]", "item_id")
 
   return None
 

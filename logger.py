@@ -3,7 +3,7 @@ from datetime import datetime
 def log(message, kind="main"):
   print(message)
   path = "logs/" + kind + ".txt"
-  stamp = datetime.now().strftime("%m/%d/%Y | %H:%M:%S | ")
+  stamp = datetime.now().strftime("%m/%d/%Y | %H:%M:%S |")
   try:
     f = open(path, "a")
     f.write(stamp + " " + message + "\n")

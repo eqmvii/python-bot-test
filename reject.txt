@@ -94,6 +94,8 @@ War Scythe
 War Staff
 War Sword
 Yew Wand
+War Fork
+Demonhide Boots
 ### List of Low Runes ###
 El Rune
 Eld Rune
