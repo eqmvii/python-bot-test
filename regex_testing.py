@@ -11,13 +11,10 @@ def main():
     found_item = " une B w"
   print("\nBuilding regex for " + found_item)
 
-  result = scroll_of_identify.find_item(found_item)
-  if result:
-    print("Result: " + result + ". Took " + str(round(time.time() - start_time, 3)) + " seconds.")
-  else:
-    print("No Single Match")
+  results_tuple = scroll_of_identify.identify(found_item)
+  print("Result: " + results_tuple[0] + ". Confidence: " + str(results_tuple[1]) + ". Took " + str(round(time.time() - start_time, 3)) + " seconds.")
 
-  return result
+  return results_tuple
 
 if __name__ == "__main__":
   main()

@@ -45,3 +45,6 @@ class GroundItem:
     self.identity = id_tuple[0]
     self.confidence = id_tuple[1]
 
+  def magic_or_better(self):
+    return self.color != "other"
+

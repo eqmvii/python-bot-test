@@ -1,43 +1,99 @@
 ### Alpha Items with Boring Set / Unique ###
+Ancient Armor
+Axe
+Bardiche
+Bastard Sword
+Battle Axe
 Battle Staff
 Bone Helm
+Bone Shield
+Bone Wand
 Brandistock
 Breast Plate
+Broad Axe
 Broad Sword
+Chain Boots
 Chain Mail
+Claymore
+Club
+Composite Bow
+Dirk
 Double Axe
+Falchion
+Field Plate
 Flail
-Full Helm
+Flamberge
 Full Helm
 Full Plate Mail
 Gauntlets
+Giant Axe
 Giant Sword
+Gnarled Staff
 Gothic Plate
+Gothic Shield
 Grand Scepter
+Great Axe
 Great Helm
 Great Maul
+Great Sword
 Greaves
+Grim Wand
+Halberd
+Hard Leather Armor
+Heavy Belt
 Heavy Boots
 Heavy Crossbow
 Heavy Gloves
 Kite Shield
+Kris
+Large Axe
 Large Shield
+Leather Armor
 Light Belt
+Light Crossbow
+Light Gauntlets
 Light Plate
 Light Plated Boots
 Long Battle Bow
-Mask
+Long Bow
+Long Staff
+Long Sword
+Long War Bow
+Mace
 Military Pick
 Morning Star
+Pike
+Plate Mail
 Plated Belt
 Poleaxe
+Repeating Crossbow
+Ring Mail
 Sabre
 Scale Mail
+Scimitar
 Short Battle Bow
+Short Sword
 Short War Bow
+Skull Cap
+Small Shield
+Spear
+Spetum
+Spiked Club
+Spiked Shield
+Splint Mail
+Studded Leather
 Tower Shield
+Trident
 Twin Axe
+Two Handed Sword
 Voulge
+War Axe
+War Hammer
+War Scepter
+War Scythe
+War Staff
+War Sword
+Yew Wand
 ### List of Low Runes ###
 El Rune
 Eld Rune

@@ -54,7 +54,7 @@ def should_loot(item_color, item_name):
   if item_color == 'green' or item_color == 'gold' or item_color == 'red':
     # We're generally interested in set/unique/rune, but reject if we've ID'd something we don't want
     if item_name + "\n" in ITEMS_TO_REJECT:
-      logger.log("Choosing _not_ to loot (" + item_color + ") " + item_name)
+      logger.log("REJECTED: (" + item_color + ") " + item_name)
       return False
     else:
       return True
@@ -70,7 +70,7 @@ def loot():
   while True:
     attempts += 1
     found_something_this_scan = False
-    pyautogui.moveTo(20, 20)
+    pyautogui.moveTo(580, 240)
     pyautogui.keyDown('alt')
     time.sleep(0.5)
 

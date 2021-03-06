@@ -4,6 +4,11 @@ import time
 import logger
 
 common_misses = {
+  # Important things - these are near certain, but have lots of RegEx matches otherwise
+  'ing': 'Ring',
+  'R ng': 'Ring',
+  'Rin': 'Ring',
+  # BS
   'Gold Gold': 'Gold (but twice lol)',
   'Gold': 'Gold',
   'old': 'Gold',
@@ -51,7 +56,8 @@ def find_item(raw_found_item_string, items_filename="item_names.txt"):
   finally:
     f.close()
 
-  if item_regex + "\n" in item_names:
+  # lstrip hack needed since we add the \n above... should clean this up...
+  if item_regex.lstrip() + "\n" in item_names:
     return item_regex
   else:
     # No direct hit, and we could have missed the final letters, so end with wildcard
@@ -83,4 +89,4 @@ def identify(raw_item_text):
     else:
       result = raw_item_text
 
-  return (result, confidence)
+  return (result.lstrip(), confidence)
