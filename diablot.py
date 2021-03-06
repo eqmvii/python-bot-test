@@ -6,6 +6,7 @@ import numpy as np
 ## Custom Modules
 import reading_glasses
 import logger
+import rejects
 
 SLEEP_TIME = 0.25
 WALK_TIME = 1.2
@@ -15,6 +16,8 @@ CENTER_X = 960
 CENTER_Y = 540
 
 WORD_CONFIDENCE = 0.85
+
+ITEMS_TO_REJECT = rejects.list_items()
 
 # TODO const region tuple?
 
@@ -49,7 +52,12 @@ def write_items(new_items):
 
 def should_loot(item_color, item_name):
   if item_color == 'green' or item_color == 'gold' or item_color == 'red':
-    return True
+    # We're generally interested in set/unique/rune, but reject if we've ID'd something we don't want
+    if item_name + "\n" in ITEMS_TO_REJECT:
+      logger.log("Choosing _not_ to loot (" + item_color + ") " + item_name)
+      return False
+    else:
+      return True
   if item_name in ["Small Charm", "Grand Charm", "Jewel"]:
     return True
   return False

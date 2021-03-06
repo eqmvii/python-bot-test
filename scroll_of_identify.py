@@ -27,9 +27,8 @@ def build_regex(stripped_string):
     item_regex = wildcard
 
   for i in range(len(stripped_string)):
-    # If this is a space, and the next letter is lowercase, use a wildcard instead of a space.
-    # Because we did string.strip() this won't ever look out of bounds.
-    if stripped_string[i] == " " and re.search(lowers, stripped_string[i + 1]):
+    # To match Wa Hammer, need to make all spaces wild cards :/
+    if stripped_string[i] == " ":
       item_regex += wildcard
     else:
       item_regex += stripped_string[i]
@@ -58,6 +57,7 @@ def find_item(raw_found_item_string, items_filename="item_names.txt"):
     elif not search_result:
       logger.log("No results for " + raw_found_item_string + ", as: " + item_regex, "item_id")
     else:
+      # TODO: Somehow save these, so possible IDs for things like charms and jewels can get picked
       logger.log("Multiple results for " + raw_found_item_string + ", as: " + item_regex, "item_id")
 
   return None
