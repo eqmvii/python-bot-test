@@ -34,6 +34,10 @@ def build_results(line_sorted_letters):
           items[-1].add_letter({'capital': ll["capital"], 'x': ll["x"] + ll["width"], 'y': ll["y"], 'line_number': ll["line_number"], 'letter': " ", 'width': 1, 'color': ll["color"]})
         items[-1].add_letter(letter)
 
+  for item in items:
+    item.identify()
+    # if item.has_interesting_color():
+    #   item.identify()
   return items
 
 def get_color(im, x, y, width, height):
@@ -75,7 +79,7 @@ def bucket(raw_results):
   current_line_number = 0
   current_row_y = y_sorted[0]['y']
   for letter in y_sorted:
-    if letter['y'] - current_row_y <= 11:
+    if letter['y'] - current_row_y <= 12: # 11 dropped a from a super healing potion
       letter['line_number'] = current_line_number
     else:
       current_line_number += 1
@@ -104,6 +108,7 @@ def teach_me_how_to_read(im):
   sorted_results = bucket(results)
 
   fully_baked_output = build_results(sorted_results)
+
   print_results(fully_baked_output)
 
   return fully_baked_output

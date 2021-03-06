@@ -1,10 +1,13 @@
 # Class representing an item on the ground, read via OCR
+import scroll_of_identify
 
 class GroundItem:
   def __init__(self, letter):
     self.letters = [letter]
     self.color = letter["color"]
     self.line_number = letter["line_number"]
+    self.identity = "!!! UNIDENTIFIED !!!"
+    self.confidence = 0
 
   def say_hi(self):
     print("Hi, my color is: " + color)
@@ -30,4 +33,12 @@ class GroundItem:
 
   def pickup_y(self):
     return self.letters[0]["y"] + 2
+
+  def has_interesting_color(self):
+    return self.color == "green" or self.color == "gold" or self.color == "red"
+
+  def identify(self):
+    id_tuple = scroll_of_identify.identify(self.name())
+    self.identity = id_tuple[0]
+    self.confidence = id_tuple[1]
 
