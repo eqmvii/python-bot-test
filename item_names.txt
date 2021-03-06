@@ -39,7 +39,7 @@ Battle Scythe
 Battle Staff
 Battle Sword
 Bearded Axe
-Bec-de-Corbin
+Bec de Corbin
 Belt
 Berserker Axe
 Bill
@@ -83,7 +83,7 @@ Champion Axe
 Champion Sword
 Chaos Armor
 Choking Gas Potion
-Chu-Ko-Nu
+ChuKoNu
 Cinquedeas
 Circlet
 Clasped Orb
@@ -241,8 +241,8 @@ Hierophant Trophy
 Highland Blade
 Holy Water Sprinkler
 Horned Helm
-Hunter's Bow
-Hunter's Guise
+Hunters Bow
+Hunters Guise
 Hurlbat
 Hydra Bow
 Hydra Edge
@@ -251,7 +251,7 @@ Hyperion
 Hyperion Javelin
 Hyperion Spear
 Jagged Star
-Jared's Stone
+Jareds Stone
 Javelin
 Jawbone Cap
 Jawbone Visor
@@ -397,7 +397,7 @@ Short Staff
 Short Sword
 Short War Bow
 Siege Crossbow
-Silver-edged Axe
+Silver edged Axe
 Simbilan
 Skull Cap
 Sky Spirit
@@ -449,7 +449,7 @@ Truncheon
 Tulwar
 Tusk Sword
 Twin Axe
-Two-Handed Sword
+Two Handed Sword
 Tyrant Club
 Unearthed Wand
 Unraveller Head
@@ -583,6 +583,7 @@ Full Reijuvenation Potion
 Reijuvenation Potion
 Scroll of Town Portal
 Scroll of Identify
-
+Stamina Potion
+Antidote Potion
 
 

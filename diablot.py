@@ -1,8 +1,11 @@
 import pyautogui
-import reading_glasses
 import time
 import sys
 import numpy as np
+
+## Custom Modules
+import reading_glasses
+import logger
 
 SLEEP_TIME = 0.25
 WALK_TIME = 1.2
@@ -70,7 +73,7 @@ def loot():
       if should_loot(item.color, item.identity):
         items_looted += 1
         found_something_this_scan = True
-        print("Picking up " + item.full_name() + " at (" + str(item.pickup_x() + 566) + ", " + str(item.pickup_y() + 218) + ")")
+        logger.log("Picking up " + item.full_name() + " at (" + str(item.pickup_x() + 566) + ", " + str(item.pickup_y() + 218) + ")")
         # Add in the start points for the screenshot
         pyautogui.moveTo(item.pickup_x() + 566, item.pickup_y() + 218)
         time.sleep(0.3)
@@ -82,9 +85,9 @@ def loot():
       print("Nothing to pick up...")
       break
 
-    # TODO ERIC: You are here, test this
-    if attempts > 3:
-      print("\n\n Full Inventory or pickup bug, can't proceed\n\n")
+    if attempts > 2:
+      logger.log("Full Inventory or pickup bug, can't proceed")
+      # Pause the game and stop the bot.
       pyautogui.keyUp('alt')
       pyautogui.keyDown('escape')
       sys.exit()

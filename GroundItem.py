@@ -21,9 +21,9 @@ class GroundItem:
 
   def full_name(self):
     if self.confidence == 1:
-      return "(" + self.color + ") " + self.identity + " [full confidence ID]"
+      return "(" + self.color + ") " + self.identity
     else:
-      return "(" + self.color + ") " + self.name() + " [unknown raw string]"
+      return "(" + self.color + ") " + self.name() + " [Failed To Identify]"
 
   def name(self):
     return "".join(map(lambda letter: letter["letter"], self.letters))

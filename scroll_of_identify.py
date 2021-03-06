@@ -1,13 +1,20 @@
 import re
 import sys
 import time
+import logger
 
 common_misses = {
   'Gold': 'Gold',
-  ' old': 'Gold',
+  'old': 'Gold',
   'Go d': 'Gold',
   'G ld': 'Gold',
-  'Gol ': 'Gold'
+  'Gol': 'Gold',
+  'Key': 'Key',
+  'Ke': 'Key',
+  'ey': 'Key',
+  # Reading life from bottom left of the screen
+  'ife': 'Life',
+  'Life': 'Life'
   }
 
 def build_regex(stripped_string):
@@ -48,6 +55,10 @@ def find_item(raw_found_item_string, items_filename="item_names.txt"):
     search_result = re.findall(item_regex, items_string)
     if search_result and len(search_result) == 1:
       return search_result[0]
+    elif not search_result:
+      logger.log("No results for " + raw_found_item_string + ", as: " + item_regex, "item_id")
+    else:
+      logger.log("Multiple results for " + raw_found_item_string + ", as: " + item_regex, "item_id")
 
   return None
 
