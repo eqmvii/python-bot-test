@@ -1,95 +1,68 @@
-tc_87 = [
-  "Giant Thresher",
-  "Mythical Sword",
-  "Caduceus",
-  "Vortex Shield",
-  "Corona",
-  "Sacred Armor",
-  "Thunder Maul",
-  "Scissors Suwayyah",
-  "Hydra Bow",
-  "Colossus Blade",
-  "Diadem",
-  "Shadow Plate",
-  "Ogre Gauntlets",
-  "Berserker Axe",
-  "Glorious Axe",
-  "Legend Spike",
-  "Winged Harpoon",
-  "War Pike",
-  "Archon Staff",
-  "Unearthed Wand",
-  "Dimensional Shard",
-  "Bloodlord Skull",
-  "Myrmidon Greaves"
-]
-
-valuable = [
-  "Monarch",
-  "Shako",
-  "Jewel",
-  "Ring",
-  "Amulet",
-  "Dusk Shroud"
-]
-
-missing = [
-  "Grand Crown",
-  "Armet",
-  "Spired Helm",
-  "Kraken Shell",
-  "Shadow Plate",
-  "Tigulated Mail",
-  "Chaos Armor",
-  "Troll Nest",
-  "Ward",
-  "Dragon Shield",
-  "Battle Gauntlets",
-  "War Spike",
-  "Champion Axe",
-  "Twin Axe",
-  "Crusader Bow",
-  "Ghost Glaive",
-  "Legendary Mallet",
-  "Cryptic Axe",
-  "Mighty Scepter",
-  "Battle Scythe",
-  "Holy Water Sprinkler",
-  "Elegant Blade",
-  "Jo Staff",
-  "Gothic Staff",
-  "Rune Staff",
-  "Lich Wand",
-  "Unearthed Wand",
-  "Tomb Wand",
-  "Ceremonial Pike",
-  "Earth Spirit",
-  "Sky Spirit",
-  "Bloodlord Skull",
-  "Zakarum Shield"
-]
-
-other = [
-  "Balrog Skin"
-]
+import re
+import sys
+import time
 
 common_misses = {
-  'Reijuvenation Potion': "Rejuvination Potion"
-}
+  'Gold': 'Gold',
+  ' old': 'Gold',
+  'Go d': 'Gold',
+  'G ld': 'Gold',
+  'Gol ': 'Gold'
+  }
+
+def build_regex(stripped_string):
+  wildcard = ".*"
+  item_regex = ""
+  lowers = "[a-z]"
+
+  # All items should start with a capital. If ours doesn't, we missed the first letter
+  if re.search(lowers, stripped_string[0]):
+    item_regex = wildcard
+
+  for i in range(len(stripped_string)):
+    # If this is a space, and the next letter is lowercase, use a wildcard instead of a space.
+    # Because we did string.strip() this won't ever look out of bounds.
+    if stripped_string[i] == " " and re.search(lowers, stripped_string[i + 1]):
+      item_regex += wildcard
+    else:
+      item_regex += stripped_string[i]
+
+  return item_regex
+
+
+def find_item(raw_found_item_string, items_filename="item_names.txt"):
+  item_regex = build_regex(raw_found_item_string)
+
+  try:
+    f = open(items_filename, "r")
+    item_names = f.readlines()
+  finally:
+    f.close()
+
+  if item_regex + "\n" in item_names:
+    return item_regex
+  else:
+    # No direct hit, and we could have missed the final letters, so end with wildcard
+    item_regex = item_regex + ".*"
+    items_string = "".join(item_names)
+    search_result = re.findall(item_regex, items_string)
+    if search_result and len(search_result) == 1:
+      return search_result[0]
+
+  return None
 
 def identify(raw_item_text):
   confidence = 0
-  identity = raw_item_text.strip()
+  input_string = raw_item_text.strip()
 
-  desired_items = tc_87 + valuable + missing + other
-  if raw_item_text in desired_items:
+  if input_string in common_misses:
     confidence = 1
-  elif raw_item_text in common_misses:
-    confidence = 1
-    identity = common_misses[raw_item_text]
-  # TODO: RegEx "crossword" solver
+    result = common_misses[input_string]
+  else:
+    result = find_item(input_string)
+    if result:
+      confidence = 1
+    else:
+      result = raw_item_text
 
-  if confidence > 0.9:
-    print("High Confidence Find: " + identity)
-
-  return (raw_item_text, confidence)
+  return (result, confidence)

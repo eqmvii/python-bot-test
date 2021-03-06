@@ -36,8 +36,7 @@ def build_results(line_sorted_letters):
 
   for item in items:
     item.identify()
-    # if item.has_interesting_color():
-    #   item.identify()
+
   return items
 
 def get_color(im, x, y, width, height):

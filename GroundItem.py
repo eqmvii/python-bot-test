@@ -20,7 +20,10 @@ class GroundItem:
     self.letters.append(letter)
 
   def full_name(self):
-    return "(" + self.color + ") " + "".join(map(lambda letter: letter["letter"], self.letters))
+    if self.confidence == 1:
+      return "(" + self.color + ") " + self.identity + " [full confidence ID]"
+    else:
+      return "(" + self.color + ") " + self.name() + " [unknown raw string]"
 
   def name(self):
     return "".join(map(lambda letter: letter["letter"], self.letters))

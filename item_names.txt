@@ -571,3 +571,18 @@ Topaz
 Um Rune
 Vex Rune
 Zod Rune
+Bolts
+Arrows
+Healing Potion
+Greater Healing Potion
+Super Healing Potion
+Mana Potion
+Greater Mana Potion
+Super Mana Potion
+Full Reijuvenation Potion
+Reijuvenation Potion
+Scroll of Town Portal
+Scroll of Identify
+
+
+

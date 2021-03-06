@@ -1,6 +1,7 @@
 import pyautogui
 import reading_glasses
 import time
+import sys
 import numpy as np
 
 SLEEP_TIME = 0.25
@@ -43,27 +44,50 @@ def write_items(new_items):
   f.close()
 
 
+def should_loot(item_color, item_name):
+  if item_color == 'green' or item_color == 'gold' or item_color == 'red':
+    return True
+  if item_name in ["Small Charm", "Grand Charm", "Jewel"]:
+    return True
+  return False
+
+
 def loot():
   items_looted = 0
-  pyautogui.moveTo(CENTER_X, CENTER_Y)
-  pyautogui.keyUp('shift')
-  pyautogui.keyDown('alt')
-  time.sleep(0.5)
+  attempts = 0
 
-  items = reading_glasses.teach_me_how_to_read(pyautogui.screenshot(region=(566,218, 790, 590)))
-  write_items(map(lambda item: item.name(), items))
+  while True:
+    attempts += 1
+    found_something_this_scan = False
+    pyautogui.moveTo(20, 20)
+    pyautogui.keyDown('alt')
+    time.sleep(0.5)
 
-  # Naive version - pick up the green and gold and red, only try for one item tops
-  for item in items:
-    if item.color == 'green' or item.color == 'gold' or item.color == 'red':
-      items_looted += 1
-      print("Picking up " + item.full_name() + " at (" + str(item.pickup_x() + 566) + ", " + str(item.pickup_y() + 218) + ")")
-      # Add in the start points for the screenshot
-      pyautogui.moveTo(item.pickup_x() + 566, item.pickup_y() + 218)
-      time.sleep(0.3)
-      pyautogui.click()
-      time.sleep(2)
+    items = reading_glasses.teach_me_how_to_read(pyautogui.screenshot(region=(566,218, 790, 590)))
+    write_items(map(lambda item: item.name(), items))
+
+    for item in items:
+      if should_loot(item.color, item.identity):
+        items_looted += 1
+        found_something_this_scan = True
+        print("Picking up " + item.full_name() + " at (" + str(item.pickup_x() + 566) + ", " + str(item.pickup_y() + 218) + ")")
+        # Add in the start points for the screenshot
+        pyautogui.moveTo(item.pickup_x() + 566, item.pickup_y() + 218)
+        time.sleep(0.3)
+        pyautogui.click()
+        time.sleep(2)
+        break
+
+    if not found_something_this_scan:
+      print("Nothing to pick up...")
       break
+
+    # TODO ERIC: You are here, test this
+    if attempts > 3:
+      print("\n\n Full Inventory or pickup bug, can't proceed\n\n")
+      pyautogui.keyUp('alt')
+      pyautogui.keyDown('escape')
+      sys.exit()
 
   pyautogui.keyUp('alt')
   return items_looted
@@ -123,6 +147,8 @@ def run_bot():
     pyautogui.click()
     pyautogui.moveRel(-4, 0)
     time.sleep(0.4)
+
+  pyautogui.keyUp('shift')
 
   # gimme da loot
   time.sleep(1)
