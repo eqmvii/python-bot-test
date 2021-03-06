@@ -1,65 +1,114 @@
 
 a
+a a
 a be d
 A chon Plate
+A cie t Shie d
+a g o o
 a o
 a o o
+acr d Armor
 Aegis
 agged Star
+aiden pea
+alc ion
 Alpha elm
 Am et
+Amethyst
 Amulet
 Ancient Axe
+Ancient Sword
+and harm
 Antidote Potion
+Antlers
 ar at
 ar Axe
+ar Dart
+ar Ja elin
 Ar ows
+ar Staff
+Arbal st
+arge arm
+Armet
+Arr ws Rancid Gas Potion
 Arrows
+Arrows Gold
 Arrows Great Hauberk
+arti a
 Ataghan
+Axe
+B lts Gold
 B lts Super Ma a Potion
+Bal og Blade
+Bal og S in
 Bala ced A e
 Balanced Knife
 Ballista
 Balrog Blade
+Balrog Spear
+Barbe Shield
 Barbed Shield
 Bardiche
+Basinet
 Bast rd Sword
 Bastard Sword
+Battl Staff
 Battle A
+Battle A e
 Battle Axe
 Battle Sword
 Belt
 Bill
 Bl de
+Blad a ons
+Blade Barrier
 Blade Bow
 Blade Talons
 Bolts
+Bolts Arrows
 Bolts Greater Heali g Potion
+Bolts Super Healin Potion
 Bone Helm
+Bone Knife
+Bone Shield
 Boneweave
 Br ndist ck
 Bra distock
+Bramble Mitt
+Brandistock
+Bre st Plat
 Breast Plat
 Breast Plate
 Broad Axe
 Broad Sword
 c
+C ossbow
+carab Husk
+Cas ue
+Casque
 Cestus
 Chain loves
+Chain Mail
+Champion Sword
 Chaos Armor
+Chi ped Diamond
 Chipped Amethyst
 Chipped Topa
 ChuKoNu
 Claws
 Claymore
 Cleaver
+Colossus Blade
 Colossus Crossbow
 Colossus Voulge
+Com osite Bow
 Composite Bow
 Composite Bow amber e
+Conqueror Crown
 Conquest word
 Corona
+Crossbow
+Crowbil
 Crown Shield
 Crus der B w
 Cryptic Axe
@@ -68,69 +117,119 @@ Cudgel
 Cuirass
 Cutlass
 D s Shroud
+Dagger
+Death Mask
 Decapitator
 Decapitator Ogre a l
 Defender
 Demon Crossbow
+Demonhead
+Demonhide Boots
 Demonhide Sash
+Devil Star
 Diamond Bow
+Diamond Mail
 Divine Scepter
+Do ble Axe
+Double A e
+Double Axe
+Double Bow
 Dragon Shield
+Dusk Shroud
+e le Bow
+e lin P ti n
 ea Gloves
+eavy rossbow
 Edge Bow
 einforced ace
 El ritch O b
 Elder taf
+ellised Armor
+Emerald
+era A e
 eremonial Spear
+Espan o
+ewel
 Executioner Sword
+F Helm
+F l elm
 F ll Helm
+F scina
 Falcata
 Falchion
 Fascia
 Feral Claws
 Field Plate
+Flail
 Flawed Diamond
+Flawed Skull
 Flawless Amethyst
+Flawless Diamond
+Flawless Emerald
 Flawless Ruby
 Flawless Sapphire
+Flawless Skull
 Flawless Topa
 Flying Axe
 Full Plate Mail
 Full Reij venation Potion
 Full Reijuvenatio Potion
 Full Reijuvenation Potion
+Fury isor
+Fury Visor
 Fuscina
 G
+G eater Healing Potion
+G H P
+G im and
 G ld
+G ld Emerald
+G ld Gold
 Ga ntlets
+Gauntlets
 ged Mace
+gendary M llet
 Giant Sword
 Gl i e
+Glaive
+Glorio s x
 Gol
 Gold
 Gold Gold
+Gold Great Axe
+Gold Heavy Crossbow
+Gold Super Healing Potion
 Gorgon Crossbow
+Gorgon ossbow
 Gothic Bow
 Gothic Plate
 Gothic Shield
 Gothic Sword
 Grand Charm
 Grand Crown
+Grand Scepter
+Grave Wand
+Gre t Axe
 Great A e
 Great Bow
 Great Helm
 Great Maul
 Great Poleaxe
 Great r Healing Potion
+Great Sword
 Greate Mana Potion
 Greater ana Potion
 Greater Hea ing Potion
 Greater Heali g Potion
+Greater Healin Potion
 Greater Healing otion
 Greater Healing Potion
 Greater Healing Potion Bolts
 Greater Healing Potion c
+Greater Healing Potion Cedar Bow
 Greater Healing Potion Gold
+Greater Healing Potion Stamina Potion
+Greater Mana Potio
 Greater Mana Potion
 Greater Talons
 Greaves
@@ -139,28 +238,55 @@ Grim Shield
 Grim Wand
 Guardian Crown
 H tc et
+Halberd
 Harpoon
+hase B de
 Hatchet Hands
 Hea y Boots
 Healing Potion
+Healing Potion Arr ws
+Healing Potion Demon rossbow
 Heater
 Heavenly Stone
+Heavy Belt
 Heavy Boots
+Hellforge Plate
 Helm
+Heraldic Shield
+Highland Bl d
 Highland Blade
+Horned H lm
+hort iege ow
 hrowing Axe
+Hunt r Bow
 Hunters Bow
+Hurlbat
 Hydra Edge
+Hyperion Ja elin
 Hyperion Javelin
+i ht B t
+iamond Bow
 ife
 igulate Mail
 igulated Mail
 ike
+ilitary Pick
+ilver edged Axe
 in
 ing
+inged A
+Io R ne
+ite hield
+Jagged Star
 JB east Plate
+Jew l
+Jewel
+K S
 Key
+Key Gold
 Key Super Healing Potion
+Kit Shield
+Kite Shi d
 Kite Shield
 Knout
 Kris
@@ -171,59 +297,95 @@ Large Charm
 laymore
 Legend Sword
 Li e
+Lich and
 Life
 Light Crossbow
+Light Gauntlets
 Light Plated Boots
+Linked Mail
+Long a Bow
 Long Battle Bow
+Long Bow
+Long Staff
 Long Sword
+Long Wa Bow
 Long War Bow
 Loricated Mail
+Luna
 M
+M e Plate
 m l t
 M P
+Mace
+Maiden Spear
+Mancatcher
 Mask
+Matriarchal Javelin
 Matriarchal Spear
 Military Pick
+Mir ored Boots
+Mithril Coil Flawed Emerald
 Mithril Point
 Monarch
 Mornin Star
 Morning Star
+Mummified rophy
 Naga
 o
+o d
+o Gold
 oc aber A e
 Og e
 Ogre Axe
 Oil Potion
 orned Helm
+Ort Rune
+othic Sword
 Parti an
 Pavise
 Pellet Bow
+Pet ified Wand
 Pike
+Pilum
 Plate Mail
 Plated Belt
+Poignard
 Polea e
 Poleaxe
+Quhab
 r stal Sword
 Rancid Gas Potion
+reat Axe
+reat Helm
 reat Ma l
 reater ana otion
+reater ealing otion
 Reij venation Potion
 Reijuvenation Potion
+Reijuvenation Potion c
 Reijuvenation Potion Gold
+rellised Armor
 Ri g
 Rin
 Ring
 Ring Mail
+rist Blade
 Round Shield
 Royal Shield
 Rune Bow
+S ider Bow
+S M P Key
 S per Healing Potion
 S per Mana Potion
 S perior Crown Shield
+S perior Small Shield
 S perior Spi ed Shield
+S S B
+S t m
 Sabre
 Sac e rmor
 Sallet
+Sc the
 Scarabshell Boots
 Scissor atar
 Scissors Quhab
@@ -231,273 +393,111 @@ Scroll of Identify
 Scroll of own Portal
 Scroll of Town Po tal
 Scroll of Town Portal
+Scroll of Town Portal Gold
 Scutum
 Scythe
+Serpentskin Armo
 Serpentskin Armor
 Shadow Bow
 Shako
 Sharktooth Armor
 Short Batt e Bow
 Short Siege Bow
+Short Spear
+Siege Crossbow
 Sma l harm
+Small Charm
 Smo ed Sphere
+Smoked Sphere
 Spear
+Spet m
 Spetum
+Spi ed Shield
 Spiked Shield
+St ian Pike
+Stag Bow
 Stamina Potion
 Stiletto
 Stygian Pike
 Su er Healing Potion
+Supe ior yperion
 Supe Mana Potion
+Super H
+Super He lin P ti n Reijuvenation Potion
 Super He ling P ti n Go
+Super He ling Potion Gold
 Super Hea ing Potion
+Super Heali g Potion
 Super Healing otio
 Super Healing otion
 Super Healing Potio
 Super Healing Potion
+Super Healing Potion Espandon
 Super Healing Potion Gold
 Super Healing Potion Oil Potion
+Super Healing Potion War Dart
+Super M n Potion o
 Super Ma a Potion
 Super Mana otion
 Super Mana Potio
 Super Mana Potion
+Super Mana Potion Arrows
+Super Mana Potion B lts
+Super Mana Potion Gold
+Super Mana Potion Key
+Superio pider Bow
 Superior Aerin Shield
+Superior aiden Javelin
 Superior Blade Bow
 Superior Blade Talons
 Superior Brandistock
 Superior Cla more
+Superior Greaves
 Superior Helm
 Superior Kris
+Superior Short Sword
+Superior Trident
 Superior Unraveller Head
 Superior Wa Staff
 Suwayyah
+T
 T wer Shield
 Thawin Potion
+Thawing Potion
+Throwing Axe
 Tiara
 Tir Rune
 Tomahawk
+Tr ncheon
+Trident
+Troll Nest
+Tusk Sword
 TwoHanded Sword
 ummified Trophy
+uper ana otion
 uperior Flambe e
 uperior ite Shie d
 usk Shroud
 v
+Vampirefang Belt
 Voulge
+Wa Ax
 War ammer
+War Axe
 War Belt
+War Club
 War Dart
 War For
 War Fork
+War Hammer
+War Javelin
+War Spear
 War Spike
 War Sword
+Ward Bow
 Winged Helm
 Wy mhide
-Yew Wand
-Long Staff
-Casque
-carab Husk
-Superior aiden Javelin
-Flail
-ar Staff
-Hunt r Bow
-Barbe Shield
-Basinet
-Vampirefang Belt
-Poignard
-Spi ed Shield
-Mir ored Boots
-Key Gold
-Troll Nest
-Armet
-Hurlbat
-War Hammer
-Tr ncheon
-Grave Wand
-Serpentskin Armo
-ilitary Pick
-Double A e
-Super He ling Potion Gold
-Battl Staff
-Balrog Spear
-G ld Gold
-Antlers
-Bolts Super Healin Potion
-acr d Armor
-arti a
-Greater Healing Potion Cedar Bow
-Glorio s x
-Com osite Bow
 Yari
-Thawing Potion
-Zweihander
-Emerald
-Superio pider Bow
-Matriarchal Javelin
-Pilum
-Greater Mana Potio
-Scroll of Town Portal Gold
-ewel
-uper ana otion
-S M P Key
-Mithril Coil Flawed Emerald
-Diamond Mail
-Champion Sword
-Lich and
-Long a Bow
-Double Axe
-Superior Short Sword
-e le Bow
-War Spear
-Battle A e
-Long Wa Bow
-Grand Scepter
-Healing Potion Arr ws
-alc ion
-Pet ified Wand
-Jew l
-War Axe
-Bolts Arrows
-F scina
-B lts Gold
+Yew Wand
 Zakarum S ield
-Stag Bow
-Axe
-Crowbil
-Super Healing Potion War Dart
-Super He lin P ti n Reijuvenation Potion
-a g o o
-S perior Small Shield
-Glaive
-War Javelin
-Blad a ons
-G eater Healing Potion
-Bal og S in
-Wa Ax
-Trident
-reat Helm
-St ian Pike
-Healing Potion Demon rossbow
-Flawless Diamond
-Ward Bow
-Double Bow
-hase B de
-S S B
-hort iege ow
-Halberd
-Throwing Axe
-Small Charm
-reater ealing otion
-othic Sword
-G H P
-Quhab
-Amethyst
-Crossbow
-arge arm
-Mace
-Io R ne
-S t m
-Hellforge Plate
-i ht B t
-Do ble Axe
-Luna
-Gold Heavy Crossbow
-inged A
-era A e
-S ider Bow
-Devil Star
-Arr ws Rancid Gas Potion
-Greater Healin Potion
-Spet m
-iamond Bow
-ite hield
-ar Dart
-Superior Trident
-K S
-F l elm
-Gorgon ossbow
-Ancient Sword
-Espan o
-A cie t Shie d
-Death Mask
-ellised Armor
-Chain Mail
-Flawless Emerald
-Fury isor
-Super Mana Potion B lts
-a a
-Fury Visor
-Super M n Potion o
-Reijuvenation Potion c
-rist Blade
-F Helm
-M e Plate
-Smoked Sphere
-C ossbow
-Short Spear
-Kit Shield
-Highland Bl d
-Horned H lm
-ilver edged Axe
-Jagged Star
-Heavy Belt
-Mancatcher
-Gauntlets
-Cas ue
-Greater Healing Potion Stamina Potion
-Chi ped Diamond
-Super Healing Potion Espandon
-Great Sword
-o d
-G im and
-eavy rossbow
-Super Mana Potion Gold
-Dagger
-Demonhead
-Superior Greaves
-Long Bow
-Hyperion Ja elin
-Flawed Skull
-Arrows Gold
-aiden pea
-Maiden Spear
-Gold Super Healing Potion
-Dusk Shroud
-Conqueror Crown
-War Club
-Kite Shi d
-Demonhide Boots
-Gold Great Axe
-ar Ja elin
-Bramble Mitt
-Heraldic Shield
-rellised Armor
-reat Axe
-o Gold
-Sc the
-G ld Emerald
-Blade Barrier
-T
-Bal og Blade
-and harm
-Brandistock
-Supe ior yperion
-Siege Crossbow
-Ort Rune
-Linked Mail
-Super H
-e lin P ti n
-Gre t Axe
-Super Heali g Potion
-Bone Knife
-Flawless Skull
-Mummified rophy
-Colossus Blade
-Super Mana Potion Arrows
-Arbal st
-Tusk Sword
-gendary M llet
-Bone Shield
-Super Mana Potion Key
-Light Gauntlets
-Bre st Plat
-Jewel
+Zweihander
