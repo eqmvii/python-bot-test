@@ -498,6 +498,505 @@ Yew Wand
 Zakarum Shield
 Zombie Head
 Zweihander
+Superior Aegis
+Superior Aerin Shield
+Superior Akaran Rondache
+Superior Akaran Targe
+Superior Alpha Helm
+Superior Ancient Armor
+Superior Ancient Axe
+Superior Ancient Shield
+Superior Ancient Sword
+Superior Antlers
+Superior Arbalest
+Superior Archon Plate
+Superior Archon Staff
+Superior Armet
+Superior Ashwood Bow
+Superior Assault Helmet
+Superior Ataghan
+Superior Avenger Guard
+Superior Axe
+Superior Balanced Axe
+Superior Balanced Knife
+Superior Ballista
+Superior Balrog Blade
+Superior Balrog Skin
+Superior Balrog Spear
+Superior Barbed Club
+Superior Barbed Shield
+Superior Bardiche
+Superior Basinet
+Superior Bastard Sword
+Superior Battle Axe
+Superior Battle Belt
+Superior Battle Boots
+Superior Battle Cestus
+Superior Battle Dart
+Superior Battle Gauntlets
+Superior Battle Hammer
+Superior Battle Scythe
+Superior Battle Staff
+Superior Battle Sword
+Superior Bearded Axe
+Superior Bec de Corbin
+Superior Belt
+Superior Berserker Axe
+Superior Bill
+Superior Blade
+Superior Blade Barrier
+Superior Blade Bow
+Superior Blade Talons
+Superior Blood Spirit
+Superior Bloodlord Skull
+Superior Bone Helm
+Superior Bone Knife
+Superior Bone Shield
+Superior Bone Visage
+Superior Bone Wand
+Superior Boneweave
+Superior Boneweave Boots
+Superior Boots
+Superior Bramble Mitts
+Superior Brandistock
+Superior Breast Plate
+Superior Broad Axe
+Superior Broad Sword
+Superior Buckler
+Superior Burnt Wand
+Superior Caduceus
+Superior Cantor Trophy
+Superior Cap
+Superior Carnage Helm
+Superior Casque
+Superior Cedar Bow
+Superior Cedar Staff
+Superior Ceremonial Bow
+Superior Ceremonial Javelin
+Superior Ceremonial Pike
+Superior Ceremonial Spear
+Superior Cestus
+Superior Chain Boots
+Superior Chain Gloves
+Superior Chain Mail
+Superior Champion Axe
+Superior Champion Sword
+Superior Chaos Armor
+Superior Choking Gas Potion
+Superior ChuKoNu
+Superior Cinquedeas
+Superior Circlet
+Superior Clasped Orb
+Superior Claws
+Superior Claymore
+Superior Cleaver
+Superior Cloudy Sphere
+Superior Club
+Superior Colossus Blade
+Superior Colossus Crossbow
+Superior Colossus Girdle
+Superior Colossus Sword
+Superior Colossus Voulge
+Superior Composite Bow
+Superior Conqueror Crown
+Superior Conquest Sword
+Superior Corona
+Superior Coronet
+Superior Crossbow
+Superior Crowbill
+Superior Crown
+Superior Crown Shield
+Superior Crusader Bow
+Superior Crusader Gauntlets
+Superior Cryptic Axe
+Superior Cryptic Sword
+Superior Crystal Sword
+Superior Crystalline Globe
+Superior Cudgel
+Superior Cuirass
+Superior Cutlass
+Superior Dacian Falx
+Superior Dagger
+Superior Death Mask
+Superior Decapitator
+Superior Defender
+Superior Demon Crossbow
+Superior Demon Head
+Superior Demon Heart
+Superior Demonhead
+Superior Demonhide Armor
+Superior Demonhide Boots
+Superior Demonhide Gloves
+Superior Demonhide Sash
+Superior Destroyer Helm
+Superior Devil Star
+Superior Diadem
+Superior Diamond Bow
+Superior Diamond Mail
+Superior Dimensional Blade
+Superior Dimensional Shard
+Superior Dirk
+Superior Divine Scepter
+Superior Double Axe
+Superior Double Bow
+Superior Dragon Shield
+Superior Dream Spirit
+Superior Dusk Shroud
+Superior Eagle Orb
+Superior Earth Spirit
+Superior Edge Bow
+Superior Elder Staff
+Superior Eldritch Orb
+Superior Elegant Blade
+Superior Embossed Plate
+Superior Espandon
+Superior Ettin Axe
+Superior Executioner Sword
+Superior Exploding Potion
+Superior Falcata
+Superior Falchion
+Superior Falcon Mask
+Superior Fanged Helm
+Superior Fanged Knife
+Superior Fascia
+Superior Feral Axe
+Superior Feral Claws
+Superior Fetish Trophy
+Superior Field Plate
+Superior Flail
+Superior Flamberge
+Superior Flanged Mace
+Superior Flying Axe
+Superior Flying Knife
+Superior Francisca
+Superior Full Helm
+Superior Full Plate Mail
+Superior Fulminating Potion
+Superior Fury Visor
+Superior Fuscina
+Superior Gargoyle Head
+Superior Gauntlets
+Superior Ghost Armor
+Superior Ghost Glaive
+Superior Ghost Spear
+Superior Ghost Wand
+Superior Giant Axe
+Superior Giant Conch
+Superior Giant Sword
+Superior Giant Thresher
+Superior Gilded Shield
+Superior Gladius
+Superior Glaive
+Superior Glorious Axe
+Superior Glowing Orb
+Superior Gnarled Staff
+Superior Gorgon Crossbow
+Superior Gothic Axe
+Superior Gothic Bow
+Superior Gothic Plate
+Superior Gothic Shield
+Superior Gothic Staff
+Superior Gothic Sword
+Superior Grand Crown
+Superior Grand Matron Bow
+Superior Grand Scepter
+Superior Grave Wand
+Superior Great Axe
+Superior Great Bow
+Superior Great Hauberk
+Superior Great Helm
+Superior Great Maul
+Superior Great Pilum
+Superior Great Poleaxe
+Superior Great Sword
+Superior Greater Claws
+Superior Greater Talons
+Superior Greaves
+Superior Griffon Headdress
+Superior Grim Helm
+Superior Grim Scythe
+Superior Grim Shield
+Superior Grim Wand
+Superior Guardian Crown
+Superior Halberd
+Superior Hand Axe
+Superior Hand Scythe
+Superior Hard Leather Armor
+Superior Harpoon
+Superior Hatchet
+Superior Hatchet Hands
+Superior Hawk Helm
+Superior Heater
+Superior Heavenly Stone
+Superior Heavy Belt
+Superior Heavy Boots
+Superior Heavy Bracers
+Superior Heavy Crossbow
+Superior Heavy Gloves
+Superior Hellforge Plate
+Superior Hellspawn Skull
+Superior Helm
+Superior Heraldic Shield
+Superior Hierophant Trophy
+Superior Highland Blade
+Superior Holy Water Sprinkler
+Superior Horned Helm
+Superior Hunters Bow
+Superior Hunters Guise
+Superior Hurlbat
+Superior Hydra Bow
+Superior Hydra Edge
+Superior Hydraskull
+Superior Hyperion
+Superior Hyperion Javelin
+Superior Hyperion Spear
+Superior Jagged Star
+Superior Jareds Stone
+Superior Javelin
+Superior Jawbone Cap
+Superior Jawbone Visor
+Superior Jo Staff
+Superior Katar
+Superior Kite Shield
+Superior Knout
+Superior Kraken Shell
+Superior Kris
+Superior Kurast Shield
+Superior Lacquered Plate
+Superior Lance
+Superior Large Axe
+Superior Large Shield
+Superior Large Siege Bow
+Superior Leather Armor
+Superior Leather Gloves
+Superior Legend Spike
+Superior Legend Sword
+Superior Legendary Mallet
+Superior Lich Wand
+Superior Light Belt
+Superior Light Crossbow
+Superior Light Gauntlets
+Superior Light Plate
+Superior Light Plated Boots
+Superior Linked Mail
+Superior Lion Helm
+Superior Lochaber Axe
+Superior Long Battle Bow
+Superior Long Bow
+Superior Long Staff
+Superior Long Sword
+Superior Long War Bow
+Superior Loricated Mail
+Superior Luna
+Superior Mace
+Superior Mage Plate
+Superior Maiden Javelin
+Superior Maiden Pike
+Superior Maiden Spear
+Superior Mancatcher
+Superior Martel de Fer
+Superior Mask
+Superior Matriarchal Bow
+Superior Matriarchal Javelin
+Superior Matriarchal Pike
+Superior Matriarchal Spear
+Superior Maul
+Superior Mesh Armor
+Superior Mesh Belt
+Superior Mesh Boots
+Superior Mighty Scepter
+Superior Military Axe
+Superior Military Pick
+Superior Minion Skull
+Superior Mirrored Boots
+Superior Mithril Coil
+Superior Mithril Point
+Superior Monarch
+Superior Morning Star
+Superior Mummified Trophy
+Superior Myrmidon Greaves
+Superior Mythical Sword
+Superior Naga
+Superior Ogre Axe
+Superior Ogre Gauntlets
+Superior Ogre Maul
+Superior Oil Potion
+Superior Ornate Plate
+Superior Overseer Skull
+Superior Partizan
+Superior Pavise
+Superior Pellet Bow
+Superior Petrified Wand
+Superior Phase Blade
+Superior Pike
+Superior Pilum
+Superior Plate Mail
+Superior Plated Belt
+Superior Poignard
+Superior Poleaxe
+Superior Polished Wand
+Superior Preserved Head
+Superior Protector Shield
+Superior Quarterstaff
+Superior Quhab
+Superior Quilted Armor
+Superior Rage Mask
+Superior Rancid Gas Potion
+Superior Razor Bow
+Superior Reflex Bow
+Superior Reinforced Mace
+Superior Repeating Crossbow
+Superior Ring Mail
+Superior Rondache
+Superior Rondel
+Superior Round Shield
+Superior Royal Shield
+Superior Rune Bow
+Superior Rune Scepter
+Superior Rune Staff
+Superior Rune Sword
+Superior Runic Talons
+Superior Russet Armor
+Superior Sabre
+Superior Sacred Armor
+Superior Sacred Feathers
+Superior Sacred Globe
+Superior Sacred Rondache
+Superior Sacred Targe
+Superior Sallet
+Superior Sash
+Superior Savage Helmet
+Superior Scale Mail
+Superior Scarab Husk
+Superior Scarabshell Boots
+Superior Scepter
+Superior Scimitar
+Superior Scissors Katar
+Superior Scissors Quhab
+Superior Scissors Suwayyah
+Superior Scourge
+Superior Scutum
+Superior Scythe
+Superior Seraph Rod
+Superior Serpentskin Armor
+Superior Sexton Trophy
+Superior Shadow Bow
+Superior Shadow Plate
+Superior Shako
+Superior Shamshir
+Superior Sharkskin Belt
+Superior Sharkskin Boots
+Superior Sharkskin Gloves
+Superior Sharktooth Armor
+Superior Shillelagh
+Superior Short Battle Bow
+Superior Short Bow
+Superior Short Siege Bow
+Superior Short Spear
+Superior Short Staff
+Superior Short Sword
+Superior Short War Bow
+Superior Siege Crossbow
+Superior Silver edged Axe
+Superior Simbilan
+Superior Skull Cap
+Superior Sky Spirit
+Superior Slayer Guard
+Superior Small Crescent
+Superior Small Shield
+Superior Smoked Sphere
+Superior Sparkling Ball
+Superior Spear
+Superior Spetum
+Superior Spiculum
+Superior Spider Bow
+Superior Spiderweb Sash
+Superior Spiked Club
+Superior Spiked Shield
+Superior Spired Helm
+Superior Spirit Mask
+Superior Splint Mail
+Superior Stag Bow
+Superior Stalagmite
+Superior Stiletto
+Superior Strangling Gas Potion
+Superior Studded Leather
+Superior Stygian Pike
+Superior Stygian Pilum
+Superior Succubus Skull
+Superior Sun Spirit
+Superior Suwayyah
+Superior Swirling Crystal
+Superior Tabar
+Superior Targe
+Superior Templar Coat
+Superior Thresher
+Superior Throwing Axe
+Superior Throwing Knife
+Superior Throwing Spear
+Superior Thunder Maul
+Superior Tiara
+Superior Tigulated Mail
+Superior Tomahawk
+Superior Tomb Wand
+Superior Totemic Mask
+Superior Tower Shield
+Superior Trellised Armor
+Superior Trident
+Superior Troll Belt
+Superior Troll Nest
+Superior Truncheon
+Superior Tulwar
+Superior Tusk Sword
+Superior Twin Axe
+Superior Two Handed Sword
+Superior Tyrant Club
+Superior Unearthed Wand
+Superior Unraveller Head
+Superior Vambraces
+Superior Vampirebone Gloves
+Superior Vampirefang Belt
+Superior Vortex Orb
+Superior Vortex Shield
+Superior Voulge
+Superior Walking Stick
+Superior Wand
+Superior War Axe
+Superior War Belt
+Superior War Boots
+Superior War Club
+Superior War Dart
+Superior War Fist
+Superior War Fork
+Superior War Gauntlets
+Superior War Hammer
+Superior War Hat
+Superior War Javelin
+Superior War Pike
+Superior War Scepter
+Superior War Scythe
+Superior War Spear
+Superior War Spike
+Superior War Staff
+Superior War Sword
+Superior Ward
+Superior Ward Bow
+Superior Winged Axe
+Superior Winged Harpoon
+Superior Winged Helm
+Superior Winged Knife
+Superior Wire Fleece
+Superior Wolf Head
+Superior Wrist Blade
+Superior Wrist Spike
+Superior Wrist Sword
+Superior Wyrmhide
+Superior Wyrmhide Boots
+Superior Yari
+Superior Yew Wand
+Superior Zakarum Shield
+Superior Zombie Head
+Superior Zweihander
 Amethyst
 Amn Rune
 Amulet
