@@ -1,3 +1,4 @@
+
 Aegis
 Aerin Shield
 Akaran Rondache
@@ -579,8 +580,6 @@ Super Healing Potion
 Mana Potion
 Greater Mana Potion
 Super Mana Potion
-Full Reijuvenation Potion
-Reijuvenation Potion
 Scroll of Town Portal
 Scroll of Identify
 Stamina Potion

@@ -4,6 +4,7 @@ import time
 import logger
 
 common_misses = {
+  'Gold Gold': 'Gold (but twice lol)',
   'Gold': 'Gold',
   'old': 'Gold',
   'Go d': 'Gold',
@@ -12,6 +13,8 @@ common_misses = {
   'Key': 'Key',
   'Ke': 'Key',
   'ey': 'Key',
+  'Full Reijuvenation Potion': 'Full Rejuvination Potion',
+  'Reijuvenation Potion': 'Rejuvination Potion',
   # Reading life from bottom left of the screen
   'ife': 'Life',
   'Life': 'Life'
@@ -19,12 +22,15 @@ common_misses = {
 
 def build_regex(stripped_string):
   wildcard = ".*"
-  item_regex = ""
   lowers = "[a-z]"
 
   # All items should start with a capital. If ours doesn't, we missed the first letter
   if re.search(lowers, stripped_string[0]):
     item_regex = wildcard
+  else:
+    # Small hack, we're searching one string, so a new word means the end of the last string.
+    # Be sure file has a new line at the start.
+    item_regex = "\n"
 
   for i in range(len(stripped_string)):
     # To match Wa Hammer, need to make all spaces wild cards :/
@@ -55,10 +61,11 @@ def find_item(raw_found_item_string, items_filename="item_names.txt"):
     if search_result and len(search_result) == 1:
       return search_result[0]
     elif not search_result:
-      logger.log("No results for " + raw_found_item_string + ", as: " + item_regex, "item_id")
+      logger.log("No results for " + raw_found_item_string + ", as: " + item_regex.lstrip(), "item_id")
     else:
       # TODO: Somehow save these, so possible IDs for things like charms and jewels can get picked
-      logger.log("Multiple results for " + raw_found_item_string + ", as: " + item_regex, "item_id")
+      logger.log("Multiple results for " + raw_found_item_string + ", as: " + item_regex.lstrip(), "item_id")
+      logger.log("[" + "| ".join("".join(search_result).split("\n")) + " ]", "item_id")
 
   return None
 
