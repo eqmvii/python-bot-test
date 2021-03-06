@@ -11,7 +11,7 @@ from GroundItem import GroundItem
 
 def print_results(item_list):
   for item in item_list:
-    print(item.name())
+    print(item.full_name())
 
 def build_results(line_sorted_letters):
   if not line_sorted_letters:

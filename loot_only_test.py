@@ -20,9 +20,9 @@ for item in items:
     print("Picking up " + item.name() + " at (" + str(item.pickup_x() + 566) + ", " + str(item.pickup_y() + 218) + ")")
     # Add in the start points for the screenshot
     pyautogui.moveTo(item.pickup_x() + 566, item.pickup_y() + 218)
-    time.sleep(0.1)
-    pyautogui.click()
     time.sleep(0.2)
+    pyautogui.click()
+    time.sleep(2)
     break
 
 pyautogui.keyUp('alt')

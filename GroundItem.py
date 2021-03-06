@@ -26,8 +26,8 @@ class GroundItem:
     return self.letters[-1]
 
   def pickup_x(self):
-    return self.letters[0]["x"] + 1
+    return self.letters[0]["x"] + 2
 
   def pickup_y(self):
-    return self.letters[0]["y"] + 1
+    return self.letters[0]["y"] + 2
 

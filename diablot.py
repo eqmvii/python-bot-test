@@ -1,6 +1,7 @@
 import pyautogui
 import reading_glasses
 import time
+import numpy as np
 
 SLEEP_TIME = 0.25
 WALK_TIME = 1.2
@@ -18,28 +19,50 @@ def go_n_wait(x, y):
   pyautogui.click()
   time.sleep(WALK_TIME)
 
+
 def tele_n_wait(x, y, delay=TELE_TIME):
   pyautogui.moveTo(x, y)
   pyautogui.click(button='right')
   time.sleep(delay)
 
+
+# TODO ERIC: import module
+def write_items(new_items):
+  # TODO ERIC: lol why am I opening to read, closing, then opening again to append?
+  f_read = open("items.txt", "r")
+  existing_items = f_read.readlines()
+  f_read.close()
+
+  f = open("items.txt", "a")
+
+  unique_list = set(new_items)
+  for new_item in unique_list:
+    if new_item + "\n" not in existing_items:
+      f.write(new_item + "\n")
+
+  f.close()
+
+
 def loot():
+  items_looted = 0
   pyautogui.moveTo(CENTER_X, CENTER_Y)
   pyautogui.keyUp('shift')
   pyautogui.keyDown('alt')
   time.sleep(0.5)
 
   items = reading_glasses.teach_me_how_to_read(pyautogui.screenshot(region=(566,218, 790, 590)))
+  write_items(map(lambda item: item.name(), items))
 
   # Naive version - pick up the green and gold and red, only try for one item tops
   for item in items:
     if item.color == 'green' or item.color == 'gold' or item.color == 'red':
-      print("Picking up " + item.name() + " at (" + str(item.pickup_x() + 566) + ", " + str(item.pickup_y() + 218) + ")")
+      items_looted += 1
+      print("Picking up " + item.full_name() + " at (" + str(item.pickup_x() + 566) + ", " + str(item.pickup_y() + 218) + ")")
       # Add in the start points for the screenshot
       pyautogui.moveTo(item.pickup_x() + 566, item.pickup_y() + 218)
-      time.sleep(0.1)
+      time.sleep(0.3)
       pyautogui.click()
-      time.sleep(0.2)
+      time.sleep(2)
       break
 
   pyautogui.keyUp('alt')
@@ -123,7 +146,7 @@ def main():
   for i in range(1, 61):
     run_start = time.time()
     finds += run_bot()
-    print("| Run  " + str(i) + ". Found " + str(finds) + " in " + str(round((time.time() - run_start), 2)))
+    print("\n| Run  " + str(i) + ". Found " + str(finds) + " in " + str(round((time.time() - run_start), 2)) + "|\n")
 
   print("Goodbye 🌊")
 
