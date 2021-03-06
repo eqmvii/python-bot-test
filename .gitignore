@@ -2,3 +2,4 @@ env/
 samples/
 run_screens/
 __pycache__/
+logs/
