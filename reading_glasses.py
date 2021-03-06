@@ -10,11 +10,12 @@ from PIL import Image
 from GroundItem import GroundItem
 
 def print_results(item_list):
-  for item in items:
+  for item in item_list:
     print(item.name())
 
 def build_results(line_sorted_letters):
   if not line_sorted_letters:
+    print("No letters to build!")
     return []
 
   items = []
@@ -88,6 +89,7 @@ def teach_me_how_to_read(im):
   start = time.time()
 
   all_letters = list(string.ascii_uppercase)
+  results = []
 
   # TODO add this for the real thing for performance
   # , region=(300, 0, 500, 300)

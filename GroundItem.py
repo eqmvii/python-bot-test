@@ -16,9 +16,18 @@ class GroundItem:
       raise "I can't add a letter on a different line"
     self.letters.append(letter)
 
+  def full_name(self):
+    return "(" + self.color + ") " + "".join(map(lambda letter: letter["letter"], self.letters))
+
   def name(self):
     return "".join(map(lambda letter: letter["letter"], self.letters))
 
   def last_letter(self):
     return self.letters[-1]
+
+  def pickup_x(self):
+    return self.letters[0]["x"] + 1
+
+  def pickup_y(self):
+    return self.letters[0]["y"] + 1
 
