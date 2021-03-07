@@ -51,13 +51,15 @@ def write_items(new_items):
 
 
 def should_loot(item_color, item_name):
-  if item_color == 'green' or item_color == 'gold' or item_color == 'red':
+  if item_color == "green" or item_color == "gold" or item_color == "red":
     # We're generally interested in set/unique/rune, but reject if we've ID'd something we don't want
     if item_name + "\n" in ITEMS_TO_REJECT:
       logger.log("REJECTED: (" + item_color + ") " + item_name)
       return False
     else:
       return True
+  if item_color == "yellow" and item_name in ["Amulet", "Ring"]:
+    return True
   if item_name in ["Small Charm", "Grand Charm", "Jewel"]:
     return True
   return False
@@ -106,7 +108,9 @@ def loot():
 def run_bot():
   items_picked = 0
 
-  time.sleep(0.5)
+  time.sleep(0.7)
+  pyautogui.moveTo(600, 260) # random click, if it was first game open, gets to title screen
+  pyautogui.click()
 
   sp = pyautogui.locateCenterOnScreen('single_player.png', region=(566,218, 790, 590))
   pyautogui.moveTo(sp)
@@ -147,9 +151,9 @@ def run_bot():
 
   pyautogui.moveTo(774, 623)
   pyautogui.click()
-  time.sleep(.6)
+  time.sleep(0.7)
 
-  pyautogui.moveTo(600, 500) # Click on the Red Portal
+  pyautogui.moveTo(600, 475) # Click on the Red Portal
   pyautogui.click()
   time.sleep(1.2)
 

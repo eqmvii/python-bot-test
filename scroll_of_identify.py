@@ -2,6 +2,7 @@ import re
 import sys
 import time
 import logger
+from Levenshtein import distance as levenshtein_distance
 
 common_misses = {
   # Important things - these are near certain, but have lots of RegEx matches otherwise
@@ -70,8 +71,16 @@ def find_item(raw_found_item_string, items_filename="item_names.txt"):
       logger.log("No results for " + raw_found_item_string + ", as: " + item_regex.lstrip(), "item_id")
     else:
       # TODO: Somehow save these, so possible IDs for things like charms and jewels can get picked
-      logger.log(str(len(search_result)) + " results for " + raw_found_item_string + ". Used '" + item_regex.lstrip() + "' as RegEx.", "item_id")
-      # logger.log("[" + "| ".join("".join(search_result).split("\n")) + " ]", "item_id")
+      # Quick and dirty lev distance for things like "ong Battle Bow" that are clearly not "Superior Long Battle Bow"
+      lev_distances = sorted(map(lambda possible_match: (levenshtein_distance(raw_found_item_string, possible_match), possible_match), search_result), key=lambda dist_tuple: dist_tuple[0])
+      first_second_delta = lev_distances[1][0] - lev_distances[0][0]
+
+      # If the 2nd place lev distance is much worse than the 1st, let's just go with the first
+      if first_second_delta > 3:
+        logger.log(str(len(search_result)) + " results for " + raw_found_item_string + ". Chose minimum lev distance (" + str(lev_distances[0][0]) + "), which was (" + str(first_second_delta) + ") transformations better, after using: '" + item_regex.lstrip() + "' as RegEx.", "item_id")
+        return lev_distances[0][1]
+      else:
+        logger.log(str(len(search_result)) + " results for " + raw_found_item_string + ". Used '" + item_regex.lstrip() + "' as RegEx.", "item_id")
 
   return None
 
