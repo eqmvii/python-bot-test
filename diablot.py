@@ -10,7 +10,7 @@ import rejects
 
 SLEEP_TIME = 0.25
 WALK_TIME = 1.15
-TELE_TIME = 0.25
+TELE_TIME = 0.22
 
 CENTER_X = 960
 CENTER_Y = 540
@@ -72,7 +72,7 @@ def loot():
     found_something_this_scan = False
     pyautogui.moveTo(580, 240)
     pyautogui.keyDown('alt')
-    time.sleep(0.5)
+    time.sleep(0.3)
 
     items = reading_glasses.teach_me_how_to_read(pyautogui.screenshot(region=(566,218, 790, 590)))
     write_items(map(lambda item: item.name(), items))
@@ -106,7 +106,7 @@ def loot():
 def run_bot():
   items_picked = 0
 
-  time.sleep(0.6)
+  time.sleep(0.5)
 
   sp = pyautogui.locateCenterOnScreen('single_player.png', region=(566,218, 790, 590))
   pyautogui.moveTo(sp)
@@ -121,18 +121,37 @@ def run_bot():
   hell_button = pyautogui.locateCenterOnScreen('hell.png', region=(566,218, 790, 590))
   pyautogui.moveTo(hell_button)
   pyautogui.click()
-  time.sleep(1)
+  time.sleep(0.7)
 
   # Walk to the portal
+  # WALK_TIME 1.15
+  pyautogui.moveTo(792, 727) # Down stairs a little
+  pyautogui.click()
+  time.sleep(1)
 
-  go_n_wait(792, 727)
-  go_n_wait(761, 661)
-  go_n_wait(784, 731)
-  go_n_wait(798, 695)
-  go_n_wait(932, 735)
-  go_n_wait(774, 623)
-  go_n_wait(839, 406)
-  go_n_wait(780, 470)
+  pyautogui.moveTo(761, 661)
+  pyautogui.click()
+  time.sleep(0.8)
+
+  pyautogui.moveTo(784, 731)
+  pyautogui.click()
+  time.sleep(0.9)
+
+  pyautogui.moveTo(798, 695)
+  pyautogui.click()
+  time.sleep(0.8)
+
+  pyautogui.moveTo(932, 735)
+  pyautogui.click()
+  time.sleep(1)
+
+  pyautogui.moveTo(774, 623)
+  pyautogui.click()
+  time.sleep(.6)
+
+  pyautogui.moveTo(600, 500) # Click on the Red Portal
+  pyautogui.click()
+  time.sleep(1.2)
 
   # Inside the portal
 
@@ -140,9 +159,7 @@ def run_bot():
   pyautogui.press('f5')
   time.sleep(0.1)
   pyautogui.click(button='right')
-  time.sleep(0.1)
   pyautogui.press('f2')
-  time.sleep(0.1)
 
   tele_n_wait(1225, 309)
   tele_n_wait(1225, 309)
@@ -154,9 +171,9 @@ def run_bot():
   pyautogui.moveTo(1132, 420)
   pyautogui.keyDown('shift')
 
-  for i in range(11):
+  for i in range(9):
     pyautogui.click()
-    pyautogui.moveRel(-4, 0)
+    pyautogui.moveRel(-5, 0)
     time.sleep(0.4)
 
   pyautogui.keyUp('shift')

@@ -10,6 +10,7 @@ Bone Shield
 Bone Wand
 Brandistock
 Breast Plate
+Defender
 Broad Axe
 Broad Sword
 Chain Boots
