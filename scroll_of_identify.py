@@ -75,8 +75,8 @@ def find_item(raw_found_item_string, items_filename="item_names.txt"):
       lev_distances = sorted(map(lambda possible_match: (levenshtein_distance(raw_found_item_string, possible_match), possible_match), search_result), key=lambda dist_tuple: dist_tuple[0])
       first_second_delta = lev_distances[1][0] - lev_distances[0][0]
 
-      # If the 2nd place lev distance is much worse than the 1st, let's just go with the first
-      if first_second_delta > 3:
+      # If the 2nd place lev distance is much worse than the 1st, and the first is *close*, let's just go with the first
+      if first_second_delta > 3 and lev_distances[0][0] < 3:
         logger.log(str(len(search_result)) + " results for " + raw_found_item_string + ". Chose minimum lev distance (" + str(lev_distances[0][0]) + "), which was (" + str(first_second_delta) + ") transformations better, after using: '" + item_regex.lstrip() + "' as RegEx.", "item_id")
         return lev_distances[0][1]
       else:
