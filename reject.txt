@@ -16,6 +16,9 @@ Chain Boots
 Chain Mail
 Claymore
 Club
+Mask
+Long Battle Bow
+Edge Bow
 Composite Bow
 Dirk
 Double Axe

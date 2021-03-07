@@ -9,7 +9,7 @@ import logger
 import rejects
 
 SLEEP_TIME = 0.25
-WALK_TIME = 1.2
+WALK_TIME = 1.15
 TELE_TIME = 0.25
 
 CENTER_X = 960
