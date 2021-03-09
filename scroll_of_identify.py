@@ -74,6 +74,7 @@ def find_item(raw_found_item_string, items_filename="item_names.txt"):
       # Quick and dirty lev distance for things like "ong Battle Bow" that are clearly not "Superior Long Battle Bow"
       lev_distances = sorted(map(lambda possible_match: (levenshtein_distance(raw_found_item_string, possible_match), possible_match), search_result), key=lambda dist_tuple: dist_tuple[0])
       first_second_delta = lev_distances[1][0] - lev_distances[0][0]
+      # print(lev_distances)
 
       # If the 2nd place lev distance is much worse than the 1st, and the first is *close*, let's just go with the first
       if first_second_delta > 3 and lev_distances[0][0] < 3:

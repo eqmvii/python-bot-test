@@ -108,7 +108,8 @@ def teach_me_how_to_read(im):
 
   fully_baked_output = build_results(sorted_results)
 
-  print_results(fully_baked_output)
+  # TODO: Make togglable?
+  # print_results(fully_baked_output)
 
   return fully_baked_output
 

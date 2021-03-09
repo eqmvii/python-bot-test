@@ -10,29 +10,26 @@ Bone Shield
 Bone Wand
 Brandistock
 Breast Plate
-Defender
 Broad Axe
 Broad Sword
 Chain Boots
 Chain Mail
 Claymore
-Poignard
-Maul
-Fuscina
+Cleaver
 Club
-Mask
-Long Battle Bow
-Edge Bow
 Composite Bow
+Defender
+Demonhide Boots
 Dirk
 Double Axe
+Edge Bow
 Falchion
 Field Plate
 Flail
 Flamberge
-Cleaver
 Full Helm
 Full Plate Mail
+Fuscina
 Gauntlets
 Giant Axe
 Giant Sword
@@ -52,6 +49,7 @@ Heavy Belt
 Heavy Boots
 Heavy Crossbow
 Heavy Gloves
+Helm
 Kite Shield
 Kris
 Large Axe
@@ -63,17 +61,20 @@ Light Gauntlets
 Light Plate
 Light Plated Boots
 Long Battle Bow
+Long Battle Bow
 Long Bow
 Long Staff
 Long Sword
 Long War Bow
 Mace
+Mask
+Maul
 Military Pick
-Tomahawk
 Morning Star
 Pike
 Plate Mail
 Plated Belt
+Poignard
 Poleaxe
 Repeating Crossbow
 Ring Mail
@@ -91,20 +92,20 @@ Spiked Club
 Spiked Shield
 Splint Mail
 Studded Leather
+Tomahawk
 Tower Shield
 Trident
 Twin Axe
 Two Handed Sword
 Voulge
 War Axe
+War Fork
 War Hammer
 War Scepter
 War Scythe
 War Staff
 War Sword
 Yew Wand
-War Fork
-Demonhide Boots
 ### List of Low Runes ###
 El Rune
 Eld Rune

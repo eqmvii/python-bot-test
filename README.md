@@ -37,6 +37,8 @@ pip install python-Levenshtein
 
 pip install matplotlib
 
+pip install pynput
+
 (TODO add to requirements.txt or something?)
 
 # Tesserect
