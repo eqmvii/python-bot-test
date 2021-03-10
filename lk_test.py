@@ -137,13 +137,13 @@ def run_bot():
   pyautogui.click(button='right')
   time.sleep(0.2)
 
-  pyautogui.moveTo(1243, 649) # Into the hut
+  pyautogui.moveTo(1289, 680) # Into the hut
   pyautogui.click(button='right')
   time.sleep(0.2)
 
-  pyautogui.moveTo(934, 523) # Click the first chest
+  pyautogui.moveTo(937, 514) # Click the first chest
   pyautogui.click()
-  time.sleep(0.1)
+  time.sleep(0.2)
 
   # First loot attempt: First chest
   items_picked += loot()
@@ -151,7 +151,7 @@ def run_bot():
   pyautogui.press('f3') # Select TK
   time.sleep(0.1)
 
-  pyautogui.moveTo(1245, 586) # TK the 2nd chest
+  pyautogui.moveTo(1235, 586) # TK the 2nd chest
   pyautogui.click(button='right')
 
   pyautogui.press('f2') # Re-select Teleport
@@ -160,7 +160,7 @@ def run_bot():
   # Tele right a little, try looting again
   pyautogui.moveTo(1354, 703)
   pyautogui.click(button='right')
-  time.sleep(0.3)
+  time.sleep(0.4)
 
   # Second loot attempt: lower chest
   items_picked += loot()
