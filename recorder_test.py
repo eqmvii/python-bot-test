@@ -2,7 +2,7 @@ from pynput import mouse
 from pynput import keyboard
 import logging
 
-logging.basicConfig(filename="mouse_log.txt", level=logging.DEBUG, format='%(asctime)s: %(message)s')
+logging.basicConfig(filename="logs/mouse_log.txt", level=logging.DEBUG, format='%(asctime)s: %(message)s')
 
 print("leggo")
 

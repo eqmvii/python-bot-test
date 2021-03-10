@@ -103,7 +103,7 @@ def run_bot():
 
   pyautogui.press('h') # Choose Hell
 
-  time.sleep(0.4) # Enter game
+  time.sleep(0.6) # Enter game
 
   # Freeze up
 
@@ -141,10 +141,12 @@ def run_bot():
   pyautogui.click(button='right')
   time.sleep(0.2)
 
-
   pyautogui.moveTo(934, 523) # Click the first chest
   pyautogui.click()
   time.sleep(0.1)
+
+  # First loot attempt: First chest
+  items_picked += loot()
 
   pyautogui.press('f3') # Select TK
   time.sleep(0.1)
@@ -153,16 +155,14 @@ def run_bot():
   pyautogui.click(button='right')
 
   pyautogui.press('f2') # Re-select Teleport
-
-  time.sleep(0.4)
-
-  # First loot attempt: still near chest
-  items_picked += loot()
+  time.sleep(0.1)
 
   # Tele right a little, try looting again
-  pyautogui.moveTo(1254, 703)
+  pyautogui.moveTo(1354, 703)
   pyautogui.click(button='right')
-  time.sleep(0.1)
+  time.sleep(0.3)
+
+  # Second loot attempt: lower chest
   items_picked += loot()
 
   for i in range(9):
