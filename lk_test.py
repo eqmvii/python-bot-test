@@ -38,7 +38,6 @@ def tele_n_wait(x, y, delay=TELE_TIME):
 def should_loot(item_color, item_name):
   if item_color == "red" and item_name not in RUNES_TO_REJECT:
     pyautogui.screenshot("run_screens/hr_drops/" + item_name + "_" + datetime.now().strftime("%m.%d.%Y.at.%H.%M.%S") + '.png', region=(566,218, 790, 590))
-    logger.log("holy smokes I am gonna look this " + item_name)
     return True
   elif item_color == "red":
     logger.log("I saw, but rected, this rune during rune only mode: " + item_name)
@@ -55,7 +54,7 @@ def loot():
     found_something_this_scan = False
     pyautogui.moveTo(580, 240)
     pyautogui.keyDown('alt')
-    time.sleep(0.3)
+    time.sleep(0.1)
 
     items = reading_glasses.teach_me_how_to_read(pyautogui.screenshot(region=(566,218, 790, 590)))
 
@@ -72,7 +71,6 @@ def loot():
         break
 
     if not found_something_this_scan:
-      print("Nothing to pick up...")
       break
 
     if attempts > 2:
@@ -93,21 +91,19 @@ def run_bot():
   pyautogui.moveTo(600, 260) # random click, if it was first game open, gets to title screen
   pyautogui.click()
 
-  sp = pyautogui.locateCenterOnScreen('single_player.png', region=(566,218, 790, 590))
+  sp = pyautogui.locateCenterOnScreen('single_player.png', region=(600, 300, 790, 590), grayscale=True)
   pyautogui.moveTo(sp)
   pyautogui.click()
   time.sleep(SLEEP_TIME)
 
-  sf = pyautogui.locateCenterOnScreen('sorcyfindo.png', confidence=0.8, region=(566,218, 790, 590))
+  sf = pyautogui.locateCenterOnScreen('sorcyfindo.png', confidence=0.8, region=(566, 300, 790, 590), grayscale=True)
   pyautogui.moveTo(sf)
   pyautogui.click()
   pyautogui.click()
 
-  hell_button = pyautogui.locateCenterOnScreen('hell.png', region=(566,218, 790, 590))
-  pyautogui.moveTo(hell_button)
-  pyautogui.click()
+  pyautogui.press('h') # Choose Hell
 
-  time.sleep(0.8) # Enter game
+  time.sleep(0.4) # Enter game
 
   # Freeze up
 
@@ -115,28 +111,35 @@ def run_bot():
   time.sleep(0.1)
   pyautogui.click(button='right')
 
-  pyautogui.press('f2') # Select Teleport
+  pyautogui.press('f3') # Select TK
   time.sleep(0.1)
 
-  pyautogui.moveTo(1270, 305) # Act IV WP
+  pyautogui.moveTo(1070, 458) # Get a little closer to the wp
   pyautogui.click()
-  time.sleep(1.5)
+  time.sleep(0.3)
+
+  pyautogui.moveTo(1138, 366) # TK the WP
+  pyautogui.click(button='right')
+  time.sleep(0.5)
 
   pyautogui.moveTo(793, 308) # Act III tab
   pyautogui.click()
-  time.sleep(0.7)
+  time.sleep(0.4)
 
-  pyautogui.moveTo(674, 510) # LK
+  pyautogui.moveTo(674, 510) # LK WP
   pyautogui.click()
-  time.sleep(0.7)
+  time.sleep(0.4)
+
+  pyautogui.press('f2') # Select TP
+  time.sleep(0.1)
 
   pyautogui.moveTo(1236, 695) # Right of portal
   pyautogui.click(button='right')
-  time.sleep(0.3)
+  time.sleep(0.2)
 
   pyautogui.moveTo(1243, 649) # Into the hut
   pyautogui.click(button='right')
-  time.sleep(0.3)
+  time.sleep(0.2)
 
 
   pyautogui.moveTo(934, 523) # Click the first chest
@@ -171,10 +174,9 @@ def run_bot():
     wp = pyautogui.locateCenterOnScreen('lk_wp.png', confidence=0.8, region=(566,218, 790, 590), grayscale=True)
 
     if wp:
-      print("FOUND IT LETTUCE GO")
       pyautogui.moveTo(wp)
       pyautogui.press('f3') # Select TK
-      time.sleep(0.2)
+      time.sleep(0.1)
       pyautogui.click(button='right')
       time.sleep(0.4)
 
@@ -184,17 +186,15 @@ def run_bot():
 
       pyautogui.moveTo(676, 369) # Pandemonium Fortress
       pyautogui.click()
-      time.sleep(0.4)
+      time.sleep(0.2)
 
-      pyautogui.press('esc')
-      time.sleep(SLEEP_TIME)
+      pyautogui.press('esc') # Leave the game
+      time.sleep(0.1)
+
       pyautogui.moveTo(CENTER_X, (CENTER_Y - 40))
       pyautogui.click()
-      time.sleep(SLEEP_TIME)
 
       return items_picked
-    else:
-      print("Not yet...")
 
 
   print("I broke.")
@@ -202,16 +202,18 @@ def run_bot():
   raise
 
 def main():
-  print("Begin Runs 💰")
+  print("Begin LK Runs\n")
   finds = 0
+  bot_start = time.time()
 
   for i in range(1, 10000):
     logger.log("LK Two Chest Run", "lk")
     run_start = time.time()
     finds += run_bot()
-    print("\n| Run  " + str(i) + ". Found " + str(finds) + " in " + str(round((time.time() - run_start), 2)) + "|\n")
+    avg_run = str(round((time.time() - bot_start) / i, 2))
+    print("| Run  " + str(i) + " took " + str(round((time.time() - run_start), 2)) + " sec. Avg: " + avg_run + " sec. Found: " + str(finds) + "|")
 
-  print("Goodbye 🌊")
+  print("Goodbye!")
 
 if __name__ == "__main__":
   main()

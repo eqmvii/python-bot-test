@@ -1,1 +1,12 @@
 
+2021-03-09 22:29:12,910: Unhandled exception in listener callback
+Traceback (most recent call last):
+  File "C:\Users\coelo\repos\python-bot-test\env\lib\site-packages\pynput\_util\__init__.py", line 211, in inner
+    return f(self, *args, **kwargs)
+  File "C:\Users\coelo\repos\python-bot-test\env\lib\site-packages\pynput\keyboard\_win32.py", line 284, in _process
+    self.on_press(key)
+  File "C:\Users\coelo\repos\python-bot-test\env\lib\site-packages\pynput\_util\__init__.py", line 127, in inner
+    if f(*args) is False:
+  File "C:\Users\coelo\repos\python-bot-test\recorder_test.py", line 36, in on_press
+    if key.char == 'q':
+AttributeError: 'Key' object has no attribute 'char'

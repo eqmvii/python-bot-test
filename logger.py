@@ -1,7 +1,7 @@
 from datetime import datetime
 
 def log(message, kind="main"):
-  print(message)
+  # print(message) # maybe speed up runs?
   path = "logs/" + kind + ".txt"
   stamp = datetime.now().strftime("%m/%d/%Y | %H:%M:%S |")
   try:

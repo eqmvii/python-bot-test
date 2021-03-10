@@ -35,7 +35,9 @@ def build_results(line_sorted_letters):
         items[-1].add_letter(letter)
 
   for item in items:
-    item.identify()
+    # Minor performance improvement: only ID things we might pick up
+    if item.color in ["red", "green", "blue", "yellow", "gold"]:
+      item.identify()
 
   return items
 
