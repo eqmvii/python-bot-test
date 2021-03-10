@@ -1,4 +1,5 @@
 import pyautogui
+from datetime import datetime
 import time
 import sys
 import numpy as np
@@ -34,9 +35,9 @@ def tele_n_wait(x, y, delay=TELE_TIME):
   pyautogui.click(button='right')
   time.sleep(delay)
 
-# TODO finish refactor here
-def should_loot(item_color, item_name, rune_only_mode=False):
+def should_loot(item_color, item_name):
   if item_color == "red" and item_name not in RUNES_TO_REJECT:
+    pyautogui.screenshot("run_screens/hr_drops/" + item_name + "_" + datetime.now().strftime("%m.%d.%Y.at.%H.%M.%S") + '.png', region=(566,218, 790, 590))
     logger.log("holy smokes I am gonna look this " + item_name)
     return True
   elif item_color == "red":
@@ -115,18 +116,19 @@ def run_bot():
   pyautogui.click(button='right')
 
   pyautogui.press('f2') # Select Teleport
+  time.sleep(0.1)
 
   pyautogui.moveTo(1270, 305) # Act IV WP
   pyautogui.click()
-  time.sleep(1.4)
+  time.sleep(1.5)
 
   pyautogui.moveTo(793, 308) # Act III tab
   pyautogui.click()
-  time.sleep(1)
+  time.sleep(0.7)
 
   pyautogui.moveTo(674, 510) # LK
   pyautogui.click()
-  time.sleep(1)
+  time.sleep(0.7)
 
   pyautogui.moveTo(1236, 695) # Right of portal
   pyautogui.click(button='right')
@@ -160,13 +162,14 @@ def run_bot():
   time.sleep(0.1)
   items_picked += loot()
 
-  # TODO: Return to A4
-  for i in range(7):
+  for i in range(9):
     # Tele a little left
     pyautogui.moveTo(774, 400)
     pyautogui.click(button='right')
     time.sleep(0.1)
+
     wp = pyautogui.locateCenterOnScreen('lk_wp.png', confidence=0.8, region=(566,218, 790, 590), grayscale=True)
+
     if wp:
       print("FOUND IT LETTUCE GO")
       pyautogui.moveTo(wp)
