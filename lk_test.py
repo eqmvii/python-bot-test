@@ -103,7 +103,7 @@ def run_bot():
 
   pyautogui.press('h') # Choose Hell
 
-  time.sleep(0.6) # Enter game
+  time.sleep(0.8) # Enter game
 
   # Freeze up
 
@@ -112,7 +112,7 @@ def run_bot():
   pyautogui.click(button='right')
 
   pyautogui.press('f3') # Select TK
-  time.sleep(0.1)
+  time.sleep(0.2)
 
   pyautogui.moveTo(1070, 458) # Get a little closer to the wp
   pyautogui.click()
@@ -186,10 +186,10 @@ def run_bot():
 
       pyautogui.moveTo(676, 369) # Pandemonium Fortress
       pyautogui.click()
-      time.sleep(0.2)
+      time.sleep(0.7)
 
       pyautogui.press('esc') # Leave the game
-      time.sleep(0.1)
+      time.sleep(0.2)
 
       pyautogui.moveTo(CENTER_X, (CENTER_Y - 40))
       pyautogui.click()
@@ -206,7 +206,7 @@ def main():
   finds = 0
   bot_start = time.time()
 
-  for i in range(1, 10000):
+  for i in range(1, 401):
     logger.log("LK Two Chest Run", "lk")
     run_start = time.time()
     finds += run_bot()

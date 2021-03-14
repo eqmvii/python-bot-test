@@ -50,15 +50,14 @@ def list_items():
     "Amn Rune",
     "Sol Rune",
     "Shael Rune",
-    "Dol Rune"
-
-    # "Hel Rune",
-    # "Io Rune",
-    # "Lum Rune",
-    # "Ko Rune",
-    # "Fal Rune", # 1
+    "Dol Rune",
+    # "Hel Rune", # unsocket is important, spirit shield rolling etc., let this one run
+    "Io Rune",
+    "Lum Rune",
+    "Ko Rune"
+    # "Fal Rune", # Stopping Io/Lum/Ko, probably already have a lifetime supply.
     # "Lem Rune",
-    # "Pul Rune",
+    # "Pul Rune", # From here is what are often tracked as "high runes"
     # "Um Rune",
     # "Mal Rune",
     # "Ist Rune",
